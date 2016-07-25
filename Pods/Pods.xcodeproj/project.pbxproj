@@ -1370,6 +1370,20 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					39B5CF86C5D5526023BFA614CD6D37DC = {
+						DevelopmentTeam = CMEKUPA8BG;
+					};
+					79C040AFDDCE1BCBF6D8B5EB0B85887F = {
+						DevelopmentTeam = CMEKUPA8BG;
+					};
+					868010619D7E6CBA5C6E6E2874668C85 = {
+						DevelopmentTeam = CMEKUPA8BG;
+					};
+					BA14B622689766F6B8A4F42FD9DE552F = {
+						DevelopmentTeam = CMEKUPA8BG;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1705,6 +1719,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C132498CDD2EAF612C73F0E1446AC262 /* Alamofire.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1722,6 +1737,7 @@
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Alamofire;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1734,6 +1750,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F25E80135DB6548F356275A8A06CF710 /* JTCalendar.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1751,6 +1768,7 @@
 				MODULEMAP_FILE = "Target Support Files/JTCalendar/JTCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = JTCalendar;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1822,6 +1840,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FAC6102D1270FE11E55FC81027A2689E /* CVCalendar.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1839,6 +1858,7 @@
 				MODULEMAP_FILE = "Target Support Files/CVCalendar/CVCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = CVCalendar;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1851,6 +1871,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 674F463E3CD05ABC906970262487A25B /* FSCalendar.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1868,6 +1889,7 @@
 				MODULEMAP_FILE = "Target Support Files/FSCalendar/FSCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = FSCalendar;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1880,6 +1902,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C132498CDD2EAF612C73F0E1446AC262 /* Alamofire.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1897,6 +1920,7 @@
 				MODULEMAP_FILE = "Target Support Files/Alamofire/Alamofire.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Alamofire;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1977,6 +2001,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 674F463E3CD05ABC906970262487A25B /* FSCalendar.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -1994,6 +2019,7 @@
 				MODULEMAP_FILE = "Target Support Files/FSCalendar/FSCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = FSCalendar;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2073,6 +2099,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F25E80135DB6548F356275A8A06CF710 /* JTCalendar.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -2090,6 +2117,7 @@
 				MODULEMAP_FILE = "Target Support Files/JTCalendar/JTCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = JTCalendar;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2102,6 +2130,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FAC6102D1270FE11E55FC81027A2689E /* CVCalendar.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -2119,6 +2148,7 @@
 				MODULEMAP_FILE = "Target Support Files/CVCalendar/CVCalendar.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = CVCalendar;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

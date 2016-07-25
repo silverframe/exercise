@@ -20,6 +20,12 @@ class HabitLogViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         habits = RealmHelper.retrieveHabits()
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +44,21 @@ class HabitLogViewController: UITableViewController {
         
         cell.habitFrequencyLabel.text = String(habit.frequency)
         
+        if habit.dateCompleted.count != 0 {
+            let calendar = NSCalendar.currentCalendar()
+            calendar.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+            let date1 = NSDate()
+            let date2 = habit.dateCompleted[0].date
+            let datesAreInTheSameDay = calendar.isDate(date1, equalToDate: date2, toUnitGranularity: [.Day, .Month, .Year])
+            if datesAreInTheSameDay != true {
+                cell.habitFrequencyButton.enabled = true
+            } else {
+                cell.habitFrequencyButton.enabled = false
+            }
+        } else {
+            cell.habitFrequencyButton.enabled = true
+        }
+
         cell.habit = habit
         
         return cell
@@ -70,6 +91,8 @@ class HabitLogViewController: UITableViewController {
 
         
     }
+    
+
     
 
 }

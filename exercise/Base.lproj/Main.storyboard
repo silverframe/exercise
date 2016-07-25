@@ -86,7 +86,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="yyg-i8-AQO">
-                            <rect key="frame" x="0.0" y="328" width="600" height="388"/>
+                            <rect key="frame" x="0.0" y="368" width="600" height="388"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -152,14 +152,14 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="4RK-bb-ox5">
-                                        <rect key="frame" x="0.0" y="196" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="4RK-bb-ox5">
+                                        <rect key="frame" x="0.0" y="196" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4RK-bb-ox5" id="5l0-qB-MOt">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekly Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-oa-UsT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Weekly Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-oa-UsT">
                                                     <rect key="frame" x="13" y="11" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -171,16 +171,26 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
+                                                <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="c9y-Pp-8hp">
+                                                    <rect key="frame" x="18" y="47.5" width="554" height="31"/>
+                                                    <connections>
+                                                        <action selector="weeklyTargetChange:" destination="bId-3V-Bvo" eventType="valueChanged" id="lc8-yV-hlJ"/>
+                                                    </connections>
+                                                </slider>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MHR-Q0-BfJ" secondAttribute="trailing" constant="20" id="EnE-pF-Zeg"/>
+                                                <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="2KI-oa-UsT" secondAttribute="bottom" constant="2" id="IWH-s4-UDx"/>
+                                                <constraint firstAttribute="trailing" secondItem="c9y-Pp-8hp" secondAttribute="trailing" constant="30" id="TTk-bz-lQB"/>
                                                 <constraint firstItem="MHR-Q0-BfJ" firstAttribute="top" secondItem="5l0-qB-MOt" secondAttribute="topMargin" constant="5" id="WD2-Rv-cCM"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="MHR-Q0-BfJ" secondAttribute="bottom" constant="0.5" id="e3y-c5-o0r"/>
+                                                <constraint firstAttribute="bottom" secondItem="c9y-Pp-8hp" secondAttribute="bottom" constant="5" id="baF-7L-COe"/>
+                                                <constraint firstItem="c9y-Pp-8hp" firstAttribute="leading" secondItem="5l0-qB-MOt" secondAttribute="leading" constant="20" id="dUf-KS-hTs"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MHR-Q0-BfJ" secondAttribute="bottom" constant="40" id="e3y-c5-o0r"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j3k-uC-Y9B">
-                                        <rect key="frame" x="0.0" y="240" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="280" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j3k-uC-Y9B" id="Qs6-bB-jQH">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -207,7 +217,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wmP-3X-05v">
-                                        <rect key="frame" x="0.0" y="284" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="324" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wmP-3X-05v" id="VKs-rH-cRb">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -260,12 +270,99 @@
                         <outlet property="habitTextField" destination="fMa-bf-0Yh" id="jg3-MD-Yoe"/>
                         <outlet property="longestStreakFigure" destination="PDZ-Qy-a7r" id="uU2-hR-jHg"/>
                         <outlet property="longestStreakLabel" destination="xdv-hR-nHD" id="hJ0-IH-nG2"/>
+                        <outlet property="weeklyTargetSlider" destination="c9y-Pp-8hp" id="fVH-ek-2Do"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wq-EX-WF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3RA-2i-nqU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1030" y="345"/>
+        </scene>
+        <!--Weekly Target View Controller-->
+        <scene sceneID="b3K-PS-wje">
+            <objects>
+                <tableViewController id="h6V-0f-2Pk" customClass="WeeklyTargetViewController" customModule="exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mSC-eP-a00">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="dWr-ZB-7BR">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z7u-gz-6ev">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z7u-gz-6ev" id="1ql-fh-8du">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Z9o-D5-ZVc">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z9o-D5-ZVc" id="bvM-M2-PMp">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days/Week" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VM-8K-ZFa">
+                                                    <rect key="frame" x="14" y="11" width="99" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqi-b5-9eT">
+                                                    <rect key="frame" x="553" y="1" width="24.5" height="39.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Bqi-b5-9eT" secondAttribute="bottom" constant="2" id="LFt-CU-AQz"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bqi-b5-9eT" secondAttribute="trailing" constant="23" id="bD1-jQ-7ew"/>
+                                                <constraint firstItem="Bqi-b5-9eT" firstAttribute="top" secondItem="bvM-M2-PMp" secondAttribute="top" constant="2" id="fZK-SY-LAK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bhi-v1-6Xn">
+                                        <rect key="frame" x="0.0" y="88" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bhi-v1-6Xn" id="Ry3-gh-aOj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="0.0" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-pT-B8Z">
+                                                    <rect key="frame" x="18" y="2" width="564" height="40.5"/>
+                                                    <connections>
+                                                        <action selector="weeklyTargetChange:" destination="h6V-0f-2Pk" eventType="valueChanged" id="ldH-2G-yFg"/>
+                                                    </connections>
+                                                </slider>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="6Rd-pT-B8Z" firstAttribute="centerX" secondItem="Ry3-gh-aOj" secondAttribute="centerX" id="7QQ-He-FDT"/>
+                                                <constraint firstItem="6Rd-pT-B8Z" firstAttribute="top" secondItem="Ry3-gh-aOj" secondAttribute="top" constant="2" id="NU6-ol-UMv"/>
+                                                <constraint firstItem="6Rd-pT-B8Z" firstAttribute="leading" secondItem="Ry3-gh-aOj" secondAttribute="leading" constant="20" id="e7e-mo-7Rf"/>
+                                                <constraint firstAttribute="trailing" secondItem="6Rd-pT-B8Z" secondAttribute="trailing" constant="20" id="j6D-qE-AGC"/>
+                                                <constraint firstAttribute="bottom" secondItem="6Rd-pT-B8Z" secondAttribute="bottom" constant="2" id="yPN-qC-yQ7"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="h6V-0f-2Pk" id="AQ6-tU-rxB"/>
+                            <outlet property="delegate" destination="h6V-0f-2Pk" id="NWM-My-IhA"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="weeklyTargetFigure" destination="Bqi-b5-9eT" id="Xbn-NR-ptx"/>
+                        <outlet property="weeklyTargetSlider" destination="6Rd-pT-B8Z" id="NUH-et-08g"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZn-UY-lmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="345"/>
         </scene>
         <!--Calendar Progress View Controller-->
         <scene sceneID="Bew-Sp-Wh2">
@@ -306,7 +403,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzc-Iz-FYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="337"/>
+            <point key="canvasLocation" x="1030" y="-325"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oww-mb-BmO">

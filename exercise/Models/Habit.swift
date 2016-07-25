@@ -29,6 +29,7 @@ class Habit: Object {
         creationDate = date
     }
     
+    
     func frequencyChange(){
         if frequency == 1 && addToStreak == true {
             try! Realm().write {
@@ -58,6 +59,10 @@ class Habit: Object {
             frequency = frequency - 1
             let date = Date()
             dateCompleted.insert(date, atIndex: 0)
+            
+            for element in dateCompleted {
+                print(element.date)
+            }
         }
     }
 }   

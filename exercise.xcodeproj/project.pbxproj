@@ -18,6 +18,7 @@
 		CB3534F41D3F84BF005FD442 /* CalendarProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534F31D3F84BF005FD442 /* CalendarProgressViewController.swift */; };
 		CB3534FA1D40AA3D005FD442 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534F91D40AA3D005FD442 /* Habit.swift */; };
 		CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534FB1D40AEA1005FD442 /* Date.swift */; };
+		CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */; };
 		E25B0D324CD1A74BD9F7AC33 /* Pods_exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74946C67DEA98151F81BE8B2 /* Pods_exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		CB3534F31D3F84BF005FD442 /* CalendarProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarProgressViewController.swift; path = ../CalendarProgressViewController.swift; sourceTree = "<group>"; };
 		CB3534F91D40AA3D005FD442 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		CB3534FB1D40AEA1005FD442 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTargetViewController.swift; sourceTree = "<group>"; };
 		DE8789B3E360D19A5BA0316E /* Pods-exercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-exercise/Pods-exercise.release.xcconfig"; sourceTree = "<group>"; };
 		E82CB275E2E4CB1B76A33991 /* Pods-exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-exercise/Pods-exercise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +119,7 @@
 				CB3534F31D3F84BF005FD442 /* CalendarProgressViewController.swift */,
 				CB1584E61D41C44000D6D6BB /* HabitEntryViewController.swift */,
 				CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */,
+				CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				TargetAttributes = {
 					CB3534DB1D3F719E005FD442 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CMEKUPA8BG;
 					};
 				};
 			};
@@ -263,6 +267,7 @@
 				CB1584E71D41C44000D6D6BB /* HabitEntryViewController.swift in Sources */,
 				CB1584EA1D41E89000D6D6BB /* RealmHelper.swift in Sources */,
 				CB3534E01D3F719E005FD442 /* AppDelegate.swift in Sources */,
+				CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */,
 				CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */,
 				CB1584EC1D41EB7200D6D6BB /* HabitLogViewController.swift in Sources */,
 				CB3534FA1D40AA3D005FD442 /* Habit.swift in Sources */,
@@ -381,10 +386,13 @@
 			baseConfigurationReference = E82CB275E2E4CB1B76A33991 /* Pods-exercise.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = exercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sseah.exercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -393,10 +401,13 @@
 			baseConfigurationReference = DE8789B3E360D19A5BA0316E /* Pods-exercise.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = exercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = sseah.exercise;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
