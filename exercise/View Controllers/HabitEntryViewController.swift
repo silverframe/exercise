@@ -15,21 +15,24 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var habitTextField: UITextField!
     
-    @IBOutlet weak var habitFrequencyTextField: UITextField!
-    
     @IBOutlet weak var weeklyTargetSlider: UISlider!
+    
+    @IBOutlet weak var weeklyTargetFigure: UILabel!
     
     @IBAction func weeklyTargetChange(sender: UISlider) {
         let value = Int(sender.value)
         
         if value < 7 {
-            habitFrequencyTextField.text = String(value)}
-        else { habitFrequencyTextField.text = "Off"}
+            weeklyTargetFigure.text = String(value)}
+        else { weeklyTargetFigure.text = "Off"}
 
-        
     }
     
     @IBOutlet weak var weeklyCompletionsFigureLabel: UILabel!
+    
+    @IBOutlet weak var longestStreakFigure: UILabel!
+    
+    @IBOutlet weak var currentStreakFigure: UILabel!
     
     @IBOutlet weak var weeklyCompletionsLabel: UILabel!
     
@@ -37,16 +40,14 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var longestStreakLabel: UILabel!
     
-    @IBOutlet weak var currentStreakFigure: UITextField!
-    
-    @IBOutlet weak var longestStreakFigure: UITextField!
+
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         if let habit = habit {
             habitTextField.text = habit.name
-            habitFrequencyTextField.text = String(habit.habitFrequency)
+            weeklyTargetFigure.text = String(habit.habitFrequency)
             currentStreakFigure.text = String(habit.currentStreak)
             longestStreakFigure.text = String(habit.longestStreak)
             let habitFrequency = String(habit.habitFrequency)
@@ -55,7 +56,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             
         } else {
             habitTextField.text = ""
-            habitFrequencyTextField.text = ""
+            weeklyTargetFigure.text = ""
             currentStreakLabel.text = ""
             currentStreakFigure.text = ""
             longestStreakLabel.text = ""
@@ -100,7 +101,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
 
         if segue.identifier == "save" {
             if let habit = habit {
-                if (habitTextField.text!.isEmpty || habitFrequencyTextField.text!.isEmpty) {
+                if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
                 }else {
                 let newHabit = Habit()
@@ -109,7 +110,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                     RealmHelper.updateHabit(habit, newHabit: newHabit)}
                 
             } else {
-                if (habitTextField.text!.isEmpty || habitFrequencyTextField.text!.isEmpty) {
+                if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
                 } else {
                 let habit = Habit()
