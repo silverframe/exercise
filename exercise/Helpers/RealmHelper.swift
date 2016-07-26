@@ -66,8 +66,18 @@ class RealmHelper {
     static func updateStreakFromScratch(habitToBeUpdated: Habit, newHabit: Habit) {
         let realm = try! Realm()
         try! realm.write(){
-            habitToBeUpdated.currentStreak = 1
+            newHabit.currentStreak = 0
+            if newHabit.currentStreak > newHabit.longestStreak {
+                newHabit.longestStreak = newHabit.currentStreak
+            }
             
+        }
+    }
+    
+    static func resetWeeklyTarget(habitToBeUpdated: Habit, newHabit: Habit) {
+        let realm = try! Realm()
+        try! realm.write(){
+            newHabit.frequency = 0 
         }
     }
     

@@ -52,11 +52,11 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             longestStreakFigure.text = String(habit.longestStreak)
             let habitFrequency = String(habit.habitFrequency)
             weeklyCompletionsFigureLabel.text = "\(habit.completions)/\(habitFrequency)"
-            //need to create a weekly completions 
+            //need to create a weekly completions
             
         } else {
             habitTextField.text = ""
-            weeklyTargetFigure.text = ""
+            weeklyTargetFigure.text = "7"
             currentStreakLabel.text = ""
             currentStreakFigure.text = ""
             longestStreakLabel.text = ""
@@ -71,27 +71,22 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         habitTextField.delegate = self
         if let habit = habit {
             self.title = habit.name
+            habit.resetTargets()
+            if habit.dateCompleted.count != 0 {
             let date2 = habit.dateCompleted[0].date
             let calendar = NSCalendar.currentCalendar()
             calendar.timeZone = NSTimeZone.defaultTimeZone()
+            let datesAreInTheSameDay = calendar.isDateInToday(date2)
             let dateIstheDayBefore = calendar.isDateInYesterday(date2)
-            if dateIstheDayBefore != true {
-                try! Realm().write {
-                    habit.currentStreak = 0 }
+            //look over this tomorrow
+            if (datesAreInTheSameDay || dateIstheDayBefore) != true {
+                RealmHelper.updateStreakFromScratch(habit, newHabit: habit)}
             }
         } else {
             self.title = "New Habit"
         }
         
         setUpDefault()
-        
-//        func textField(textField:UITextField, shouldChangeCharactersInRange range:NSRange, replacementString string: String) -> Bool {
-//            let maxLength = 20
-//            let currentString: NSString = habitTextField.text!
-//            let newString: NSString = currentString.stringByReplacingCharactersInRange(range, withString: string)
-//            return newString.length <= maxLength
-//        }
-//        
     }
     
     

@@ -24,6 +24,8 @@ class Habit: Object {
     dynamic var currentStreak = 0
     //Most number of straight days in a row that a habit has been completed
     dynamic var longestStreak = 0
+    //To help with the weekly goal reset function
+    dynamic var week = 0
     dynamic var addToStreak = true
     dynamic var uuid = NSUUID().UUIDString
     let dateCompleted = List<Date>()
@@ -64,13 +66,34 @@ class Habit: Object {
         try! Realm().write {
             frequency = frequency - 1
             completions = completions + 1
+            week = currentWeekValue()
+            currentStreak = currentStreak + 1
+            if currentStreak > longestStreak {
+                longestStreak = currentStreak
+            }
             let date = Date()
             dateCompleted.insert(date, atIndex: 0)
             
         }
     }
+    
+    func currentWeekValue() -> Int{
+        let todayDate = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.component(NSCalendarUnit.WeekOfYear, fromDate: todayDate)
+        return dateComponents.hashValue
+    }
+    
+    func resetTargets() {
+        let currentWeek = currentWeekValue()
+        if week != currentWeek {
+            try! Realm().write {
+                week = currentWeek
+                frequency = 0 
+            }
+        }
+    }
 }
-
 
 
 

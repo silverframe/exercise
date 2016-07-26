@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
                                             <rect key="frame" x="15" y="11" width="200" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="lfG-pz-jup"/>
@@ -31,29 +31,38 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
-                                            <rect key="frame" x="535" y="13" width="37" height="18"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton"/>
-                                            <state key="normal" title="Done"/>
-                                            <connections>
-                                                <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-Qk-gWg">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-Qk-gWg">
                                             <rect key="frame" x="478" y="13" width="42" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
+                                            <rect key="frame" x="535" y="3" width="37" height="37"/>
+                                            <color key="backgroundColor" red="0.61436599493026733" green="0.39463987946510315" blue="0.89403945207595825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton"/>
+                                            <state key="normal">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="16"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="Ibi-Qk-gWg" secondAttribute="trailing" constant="15" id="1Cq-bl-DRz"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leadingMargin" constant="7" id="QDm-mg-Ior"/>
-                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="5" id="UwR-KG-eFt"/>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="1" id="UwR-KG-eFt"/>
                                         <constraint firstItem="Ibi-Qk-gWg" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="5" id="Wq0-Ji-bm0"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="20" id="d95-N2-EKd"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="baseline" secondItem="Gac-l8-oWu" secondAttribute="baseline" id="e8T-4f-Osq"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Gac-l8-oWu" secondAttribute="bottom" constant="5" id="lyl-2k-mOe"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Gac-l8-oWu" secondAttribute="bottom" constant="1" id="lyl-2k-mOe"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ibi-Qk-gWg" secondAttribute="bottom" constant="5" id="zeU-3E-nPz"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -127,17 +136,11 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Sl-1h-Tnw">
-                                                    <rect key="frame" x="533" y="5" width="51" height="33.5"/>
-                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="8Sl-1h-Tnw" secondAttribute="trailing" constant="10" id="2w7-fv-v95"/>
                                                 <constraint firstItem="pkR-0o-mAb" firstAttribute="top" secondItem="dCr-2P-BVd" secondAttribute="top" constant="3" id="Aur-kp-brd"/>
-                                                <constraint firstItem="8Sl-1h-Tnw" firstAttribute="top" secondItem="dCr-2P-BVd" secondAttribute="top" constant="5" id="MOX-xk-AEz"/>
                                                 <constraint firstAttribute="bottom" secondItem="pkR-0o-mAb" secondAttribute="bottom" constant="2" id="VDr-RU-2Bk"/>
                                                 <constraint firstItem="pkR-0o-mAb" firstAttribute="leading" secondItem="dCr-2P-BVd" secondAttribute="leading" constant="15" id="YFe-Ex-Zkw"/>
-                                                <constraint firstAttribute="bottom" secondItem="8Sl-1h-Tnw" secondAttribute="bottom" constant="5" id="kyO-Nc-k2h"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,15 +158,9 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SVX-tX-jZ8">
-                                                    <rect key="frame" x="531" y="3" width="51" height="32.5"/>
-                                                </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="SVX-tX-jZ8" secondAttribute="trailing" constant="20" id="G7e-Sd-dpQ"/>
                                                 <constraint firstItem="ZCw-D2-Mfa" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="top" constant="3" id="QIC-YD-O90"/>
-                                                <constraint firstAttribute="bottom" secondItem="SVX-tX-jZ8" secondAttribute="bottom" constant="8" id="ZSB-Vo-MSB"/>
-                                                <constraint firstItem="SVX-tX-jZ8" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="top" constant="3" id="few-s7-h0i"/>
                                                 <constraint firstItem="ZCw-D2-Mfa" firstAttribute="leading" secondItem="dPI-gg-dVF" secondAttribute="leading" constant="15" id="xly-ge-Ub0"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZCw-D2-Mfa" secondAttribute="bottom" constant="2" id="y2F-Gc-azo"/>
                                             </constraints>
@@ -192,14 +189,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-oa-UsT">
-                                                    <rect key="frame" x="18" y="3" width="109" height="27"/>
+                                                    <rect key="frame" x="16" y="3" width="109" height="27"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="2KI-oa-UsT" firstAttribute="leading" secondItem="5l0-qB-MOt" secondAttribute="leadingMargin" constant="10" id="1gb-AP-seu"/>
+                                                <constraint firstItem="2KI-oa-UsT" firstAttribute="leading" secondItem="5l0-qB-MOt" secondAttribute="leadingMargin" constant="8" id="1gb-AP-seu"/>
                                                 <constraint firstAttribute="trailing" secondItem="cmf-Rk-RJY" secondAttribute="trailing" constant="18" id="2KO-3N-0oH"/>
                                                 <constraint firstItem="2KI-oa-UsT" firstAttribute="top" secondItem="5l0-qB-MOt" secondAttribute="top" constant="3" id="3Td-rk-tDi"/>
                                                 <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="2KI-oa-UsT" secondAttribute="bottom" constant="2" id="IWH-s4-UDx"/>
@@ -328,7 +325,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZG-Ly-s52">
-                                                    <rect key="frame" x="550" y="2" width="30" height="39.5"/>
+                                                    <rect key="frame" x="543" y="2" width="30" height="39.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="20" id="41b-zu-nvE"/>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="xIL-CV-c3L"/>
@@ -347,7 +344,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Ayz-2a-usc" secondAttribute="bottom" constant="2" id="2gj-SC-3kK"/>
                                                 <constraint firstItem="Ayz-2a-usc" firstAttribute="top" secondItem="eo0-89-zNL" secondAttribute="top" constant="3" id="COh-Ci-4dj"/>
                                                 <constraint firstItem="hZG-Ly-s52" firstAttribute="top" secondItem="eo0-89-zNL" secondAttribute="top" constant="2" id="FKm-Mo-oqe"/>
-                                                <constraint firstAttribute="trailing" secondItem="hZG-Ly-s52" secondAttribute="trailing" constant="20" id="Mwe-DA-cuV"/>
+                                                <constraint firstAttribute="trailing" secondItem="hZG-Ly-s52" secondAttribute="trailing" constant="27" id="Mwe-DA-cuV"/>
                                                 <constraint firstItem="Ayz-2a-usc" firstAttribute="leading" secondItem="eo0-89-zNL" secondAttribute="leading" constant="15" id="Rzg-qz-rjD"/>
                                                 <constraint firstAttribute="bottom" secondItem="hZG-Ly-s52" secondAttribute="bottom" constant="2" id="vGE-Im-fGx"/>
                                             </constraints>

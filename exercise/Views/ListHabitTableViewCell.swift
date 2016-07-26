@@ -28,16 +28,11 @@ class ListHabitTableViewCell: UITableViewCell {
             calendar.timeZone = NSTimeZone.defaultTimeZone()
 //            let datesAreInTheSameDay = calendar.isDate(date1, equalToDate: date2, toUnitGranularity: [.Day, .Month, .Year])
             let datesAreInTheSameDay = calendar.isDateInToday(date2)
-            let dateIstheDayBefore = calendar.isDateInYesterday(date2)
+//            let dateIstheDayBefore = calendar.isDateInYesterday(date2)
             if datesAreInTheSameDay != true {
                 sender.enabled = true
             } else {
                 sender.enabled = false
-            }
-            if dateIstheDayBefore {
-                RealmHelper.updateStreak(habit, newHabit: habit)
-            } else {
-                RealmHelper.updateStreakFromScratch(habit, newHabit: habit)
             }
         }
     }

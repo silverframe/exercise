@@ -19,6 +19,7 @@
 		CB3534FA1D40AA3D005FD442 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534F91D40AA3D005FD442 /* Habit.swift */; };
 		CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534FB1D40AEA1005FD442 /* Date.swift */; };
 		CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */; };
+		CB73CBB81D47C79200AA1076 /* Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB71D47C79200AA1076 /* Reset.swift */; };
 		E25B0D324CD1A74BD9F7AC33 /* Pods_exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74946C67DEA98151F81BE8B2 /* Pods_exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		CB3534F91D40AA3D005FD442 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		CB3534FB1D40AEA1005FD442 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTargetViewController.swift; sourceTree = "<group>"; };
+		CB73CBB71D47C79200AA1076 /* Reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reset.swift; sourceTree = "<group>"; };
 		DE8789B3E360D19A5BA0316E /* Pods-exercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-exercise/Pods-exercise.release.xcconfig"; sourceTree = "<group>"; };
 		E82CB275E2E4CB1B76A33991 /* Pods-exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-exercise/Pods-exercise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				CB3534F81D409015005FD442 /* Models */,
 				CB3534F51D3F84EB005FD442 /* View Controllers */,
 				CB3534DF1D3F719E005FD442 /* AppDelegate.swift */,
+				CB73CBB71D47C79200AA1076 /* Reset.swift */,
 				CB3534E31D3F719E005FD442 /* Main.storyboard */,
 				CB3534E61D3F719E005FD442 /* Assets.xcassets */,
 				CB3534E81D3F719E005FD442 /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				CB3534FA1D40AA3D005FD442 /* Habit.swift in Sources */,
 				CB1584EF1D41EF4600D6D6BB /* ListHabitTableViewCell.swift in Sources */,
 				CB3534F41D3F84BF005FD442 /* CalendarProgressViewController.swift in Sources */,
+				CB73CBB81D47C79200AA1076 /* Reset.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
