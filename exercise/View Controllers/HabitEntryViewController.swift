@@ -9,7 +9,7 @@
 import RealmSwift
 import Foundation
 
-class HabitEntryViewController: UITableViewController {
+class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     var habit: Habit?
     
@@ -67,17 +67,33 @@ class HabitEntryViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if habit != nil {
-            self.title = habit?.name
+        habitTextField.delegate = self
+        if let habit = habit {
+            self.title = habit.name
+            let date2 = habit.dateCompleted[0].date
+            let calendar = NSCalendar.currentCalendar()
+            calendar.timeZone = NSTimeZone.defaultTimeZone()
+            let dateIstheDayBefore = calendar.isDateInYesterday(date2)
+            if dateIstheDayBefore != true {
+                try! Realm().write {
+                    habit.currentStreak = 0 }
+            }
         } else {
             self.title = "New Habit"
         }
         
         setUpDefault()
         
-        
-        
+//        func textField(textField:UITextField, shouldChangeCharactersInRange range:NSRange, replacementString string: String) -> Bool {
+//            let maxLength = 20
+//            let currentString: NSString = habitTextField.text!
+//            let newString: NSString = currentString.stringByReplacingCharactersInRange(range, withString: string)
+//            return newString.length <= maxLength
+//        }
+//        
     }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let habitLogViewController = segue.destinationViewController as! HabitLogViewController

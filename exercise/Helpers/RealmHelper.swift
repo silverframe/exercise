@@ -52,12 +52,24 @@ class RealmHelper {
 //        }
 //    }
     
-//    static func updateFrequency(habitToBeUpdated: Habit, habitFrequency: Int) {
-//        let realm = try! Realm()
-//        try! realm.write(){
-//            habitToBeUpdated.frequency =
-//        }
-//    }
+    static func updateStreak(habitToBeUpdated: Habit, newHabit: Habit) {
+        let realm = try! Realm()
+        try! realm.write(){
+            habitToBeUpdated.currentStreak = newHabit.currentStreak + 1
+            if newHabit.currentStreak > newHabit.longestStreak {
+                newHabit.longestStreak = newHabit.currentStreak
+            }
+            
+        }
+    }
+    
+    static func updateStreakFromScratch(habitToBeUpdated: Habit, newHabit: Habit) {
+        let realm = try! Realm()
+        try! realm.write(){
+            habitToBeUpdated.currentStreak = 1
+            
+        }
+    }
     
     static func retrieveHabits() -> Results<Habit> {
         let realm = try! Realm()

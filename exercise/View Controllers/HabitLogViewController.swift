@@ -43,17 +43,18 @@ class HabitLogViewController: UITableViewController {
         cell.habitNameLabel.text = habit.name
         
         cell.habitFrequencyLabel.text = String(habit.habitFrequency)
-        
+    
+        // Function to differentiate between a newly created habit(during the same session) and an existing one
         if habit.dateCompleted.count != 0 {
             let calendar = NSCalendar.currentCalendar()
             calendar.timeZone = NSTimeZone.defaultTimeZone()
-            let date1 = NSDate()
             let date2 = habit.dateCompleted[0].date
-            let datesAreInTheSameDay = calendar.isDate(date1, equalToDate: date2, toUnitGranularity: [.Day, .Month, .Year])
-            if datesAreInTheSameDay != true {
-                cell.habitFrequencyButton.enabled = true
-            } else {
+            let datesAreInTheSameDay = calendar.isDateInToday(date2)
+            if datesAreInTheSameDay {
                 cell.habitFrequencyButton.enabled = false
+                
+            } else {
+                cell.habitFrequencyButton.enabled = true
             }
         } else {
             cell.habitFrequencyButton.enabled = true

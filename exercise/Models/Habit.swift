@@ -63,14 +63,14 @@ class Habit: Object {
         
         try! Realm().write {
             frequency = frequency - 1
-            completions = completions + 1 
+            completions = completions + 1
             let date = Date()
             dateCompleted.insert(date, atIndex: 0)
             
         }
     }
-}   
-    
+}
+
 
 
 
