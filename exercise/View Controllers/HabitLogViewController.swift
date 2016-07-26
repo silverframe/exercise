@@ -46,7 +46,7 @@ class HabitLogViewController: UITableViewController {
         
         if habit.dateCompleted.count != 0 {
             let calendar = NSCalendar.currentCalendar()
-            calendar.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+            calendar.timeZone = NSTimeZone.defaultTimeZone()
             let date1 = NSDate()
             let date2 = habit.dateCompleted[0].date
             let datesAreInTheSameDay = calendar.isDate(date1, equalToDate: date2, toUnitGranularity: [.Day, .Month, .Year])

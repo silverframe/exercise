@@ -14,6 +14,7 @@ class Habit: Object {
     dynamic var habitFrequency = 0
     dynamic var frequency = 0
     dynamic var frequencyPeriod: String = ""
+    dynamic var weeklyTarget = 0
     dynamic var sortingIndex = 0
     dynamic var creationDate: NSDate!
     dynamic var currentStreak = 0
@@ -22,10 +23,10 @@ class Habit: Object {
     dynamic var uuid = NSUUID().UUIDString
     let dateCompleted = List<Date>()
 
-    convenience required init(habitName: String, goalFrequncy: Int, date: NSDate) {
+    convenience required init(habitName: String, goalFrequency: Int, date: NSDate) {
         self.init()
         name = habitName
-        habitFrequency = goalFrequncy
+        habitFrequency = goalFrequency
         creationDate = date
     }
     
@@ -60,9 +61,6 @@ class Habit: Object {
             let date = Date()
             dateCompleted.insert(date, atIndex: 0)
             
-            for element in dateCompleted {
-                print(element.date)
-            }
         }
     }
 }   
