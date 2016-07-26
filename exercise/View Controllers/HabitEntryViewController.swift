@@ -11,10 +11,9 @@ import Foundation
 
 class HabitEntryViewController: UITableViewController {
     
-
+    var habit: Habit?
     
     @IBOutlet weak var habitTextField: UITextField!
-
     
     @IBOutlet weak var habitFrequencyTextField: UITextField!
     
@@ -26,28 +25,33 @@ class HabitEntryViewController: UITableViewController {
         if value < 7 {
             habitFrequencyTextField.text = String(value)}
         else { habitFrequencyTextField.text = "Off"}
-        
+
         
     }
+    
+    @IBOutlet weak var weeklyCompletionsFigureLabel: UILabel!
+    
+    @IBOutlet weak var weeklyCompletionsLabel: UILabel!
+    
     @IBOutlet weak var currentStreakLabel: UILabel!
     
     @IBOutlet weak var longestStreakLabel: UILabel!
     
     @IBOutlet weak var currentStreakFigure: UITextField!
-    var habit: Habit?
     
     @IBOutlet weak var longestStreakFigure: UITextField!
-    
-
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
         if let habit = habit {
             habitTextField.text = habit.name
-            habitFrequencyTextField.text = String(habit.frequency)
+            habitFrequencyTextField.text = String(habit.habitFrequency)
             currentStreakFigure.text = String(habit.currentStreak)
             longestStreakFigure.text = String(habit.longestStreak)
+            let habitFrequency = String(habit.habitFrequency)
+            weeklyCompletionsFigureLabel.text = "\(habit.completions)/\(habitFrequency)"
+            //need to create a weekly completions 
             
         } else {
             habitTextField.text = ""
@@ -56,6 +60,8 @@ class HabitEntryViewController: UITableViewController {
             currentStreakFigure.text = ""
             longestStreakLabel.text = ""
             longestStreakFigure.text = ""
+            weeklyCompletionsLabel.text = ""
+            weeklyCompletionsFigureLabel.text = ""
         }
     }
     
@@ -83,15 +89,16 @@ class HabitEntryViewController: UITableViewController {
                 }else {
                 let newHabit = Habit()
                 newHabit.name = habitTextField.text
-                newHabit.frequency = Int(weeklyTargetSlider.value)
+                newHabit.habitFrequency = Int(weeklyTargetSlider.value)
                     RealmHelper.updateHabit(habit, newHabit: newHabit)}
+                
             } else {
                 if (habitTextField.text!.isEmpty || habitFrequencyTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
                 } else {
                 let habit = Habit()
                 habit.name = habitTextField.text
-                habit.frequency = Int(weeklyTargetSlider.value)
+                habit.habitFrequency = Int(weeklyTargetSlider.value)
                     RealmHelper.addHabit(habit)}
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
@@ -107,7 +114,7 @@ class HabitEntryViewController: UITableViewController {
 extension HabitEntryViewController {
     func setUpDefault(){
         if let habit = habit {
-                weeklyTargetSlider.value = Float(habit.frequency)
+                weeklyTargetSlider.value = Float(habit.habitFrequency)
             } else {
                 weeklyTargetSlider.value = 7
             }

@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="yyg-i8-AQO">
-                            <rect key="frame" x="0.0" y="368" width="600" height="388"/>
+                            <rect key="frame" x="0.0" y="412" width="600" height="388"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </view>
@@ -161,10 +161,10 @@
                                         <rect key="frame" x="0.0" y="196" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4RK-bb-ox5" id="5l0-qB-MOt">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Weekly Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-oa-UsT">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weekly Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2KI-oa-UsT">
                                                     <rect key="frame" x="13" y="11" width="109" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -176,14 +176,15 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="c9y-Pp-8hp">
-                                                    <rect key="frame" x="18" y="47.5" width="554" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="7" minValue="1" maxValue="7" translatesAutoresizingMaskIntoConstraints="NO" id="c9y-Pp-8hp">
+                                                    <rect key="frame" x="18" y="48" width="554" height="31"/>
                                                     <connections>
                                                         <action selector="weeklyTargetChange:" destination="bId-3V-Bvo" eventType="valueChanged" id="lc8-yV-hlJ"/>
                                                     </connections>
                                                 </slider>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="2KI-oa-UsT" firstAttribute="leading" secondItem="5l0-qB-MOt" secondAttribute="leadingMargin" constant="5" id="1gb-AP-seu"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MHR-Q0-BfJ" secondAttribute="trailing" constant="20" id="EnE-pF-Zeg"/>
                                                 <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="2KI-oa-UsT" secondAttribute="bottom" constant="2" id="IWH-s4-UDx"/>
                                                 <constraint firstAttribute="trailing" secondItem="c9y-Pp-8hp" secondAttribute="trailing" constant="30" id="TTk-bz-lQB"/>
@@ -248,6 +249,42 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kxH-uw-8dP">
+                                        <rect key="frame" x="0.0" y="368" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kxH-uw-8dP" id="eo0-89-zNL">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weekly Completions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ayz-2a-usc">
+                                                    <rect key="frame" x="8" y="11" width="157" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hZG-Ly-s52">
+                                                    <rect key="frame" x="550" y="2" width="30" height="39.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="20" id="41b-zu-nvE"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="xIL-CV-c3L"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="41b-zu-nvE"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hZG-Ly-s52" firstAttribute="top" secondItem="eo0-89-zNL" secondAttribute="top" constant="2" id="FKm-Mo-oqe"/>
+                                                <constraint firstAttribute="trailing" secondItem="hZG-Ly-s52" secondAttribute="trailing" constant="20" id="Mwe-DA-cuV"/>
+                                                <constraint firstAttribute="bottom" secondItem="hZG-Ly-s52" secondAttribute="bottom" constant="2" id="vGE-Im-fGx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -275,6 +312,8 @@
                         <outlet property="habitTextField" destination="fMa-bf-0Yh" id="jg3-MD-Yoe"/>
                         <outlet property="longestStreakFigure" destination="PDZ-Qy-a7r" id="uU2-hR-jHg"/>
                         <outlet property="longestStreakLabel" destination="xdv-hR-nHD" id="hJ0-IH-nG2"/>
+                        <outlet property="weeklyCompletionsFigureLabel" destination="hZG-Ly-s52" id="mEB-sF-aqB"/>
+                        <outlet property="weeklyCompletionsLabel" destination="Ayz-2a-usc" id="nWr-lo-Fc3"/>
                         <outlet property="weeklyTargetSlider" destination="c9y-Pp-8hp" id="fVH-ek-2Do"/>
                     </connections>
                 </tableViewController>

@@ -39,7 +39,7 @@ class RealmHelper {
         let realm = try! Realm()
         try! realm.write() {
             habitToBeUpdated.name = newHabit.name
-            habitToBeUpdated.frequency = newHabit.frequency
+            habitToBeUpdated.habitFrequency = newHabit.habitFrequency
             habitToBeUpdated.frequencyPeriod = newHabit.frequencyPeriod
         }
     }

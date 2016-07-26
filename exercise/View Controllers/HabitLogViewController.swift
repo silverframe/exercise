@@ -42,7 +42,7 @@ class HabitLogViewController: UITableViewController {
         
         cell.habitNameLabel.text = habit.name
         
-        cell.habitFrequencyLabel.text = String(habit.frequency)
+        cell.habitFrequencyLabel.text = String(habit.habitFrequency)
         
         if habit.dateCompleted.count != 0 {
             let calendar = NSCalendar.currentCalendar()

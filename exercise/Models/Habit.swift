@@ -11,13 +11,18 @@ import RealmSwift
 
 class Habit: Object {
     dynamic var name: String!
+    //Target number of times for a habit to be completed in a week
     dynamic var habitFrequency = 0
-    dynamic var frequency = 0
+    //Max number of times that a habit can be completed in a week
+    dynamic var frequency = 7
     dynamic var frequencyPeriod: String = ""
-    dynamic var weeklyTarget = 0
+    //Total number of times that a habit has been completed
+    dynamic var completions = 0
     dynamic var sortingIndex = 0
     dynamic var creationDate: NSDate!
+    //Current number of straight days in a row that a habit has been completed
     dynamic var currentStreak = 0
+    //Most number of straight days in a row that a habit has been completed
     dynamic var longestStreak = 0
     dynamic var addToStreak = true
     dynamic var uuid = NSUUID().UUIDString
@@ -58,6 +63,7 @@ class Habit: Object {
         
         try! Realm().write {
             frequency = frequency - 1
+            completions = completions + 1 
             let date = Date()
             dateCompleted.insert(date, atIndex: 0)
             

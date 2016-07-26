@@ -21,7 +21,7 @@ class ListHabitTableViewCell: UITableViewCell {
     @IBAction func habitFrequencyButtonClicked(sender: UIButton) {
         if let habit = habit {
             habit.frequencyChange()
-            self.habitFrequencyLabel.text = String(habit.frequency)
+            self.habitFrequencyLabel.text = String(habit.habitFrequency)
             let date1 = NSDate()
             let date2 = habit.dateCompleted[0].date
             let calendar = NSCalendar.currentCalendar()
