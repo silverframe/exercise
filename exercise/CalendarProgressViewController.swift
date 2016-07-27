@@ -12,6 +12,8 @@ import CVCalendar
 
 class CalendarProgressViewController: UIViewController {
     
+    var habit: Habit? 
+    
     @IBOutlet weak var menuView: CVCalendarMenuView!
     
     @IBOutlet weak var calendarView: CVCalendarView!

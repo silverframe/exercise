@@ -484,7 +484,7 @@
             </objects>
             <point key="canvasLocation" x="1726" y="345"/>
         </scene>
-        <!--Calendar Progress View Controller-->
+        <!--Title-->
         <scene sceneID="Bew-Sp-Wh2">
             <objects>
                 <viewController id="lif-db-qcP" customClass="CalendarProgressViewController" customModule="exercise" customModuleProvider="target" sceneMemberID="viewController">
@@ -496,7 +496,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69t-EK-nap" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="69t-EK-nap" customClass="CVCalendarMenuView" customModule="CVCalendar">
                                 <rect key="frame" x="0.0" y="40" width="600" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -516,6 +516,13 @@
                             <constraint firstItem="69t-EK-nap" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="xtq-F3-2rf"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="oQZ-jW-dfC"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Title" id="poJ-2v-10I">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="gBr-u6-LH1"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="calendarView" destination="VAy-Vr-T8W" id="en9-gf-MRA"/>
                         <outlet property="menuView" destination="69t-EK-nap" id="1Sq-4g-ooZ"/>
