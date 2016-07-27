@@ -89,7 +89,6 @@ class HabitLogViewController: UITableViewController {
                 let habit = habits[indexPath.row]
                 let editAlarmViewController = segue.destinationViewController as! HabitEntryViewController
                 editAlarmViewController.habit = habit
-                
             } else if identifier == "addHabit" {
                 print("+ button tapped")
             }
