@@ -20,7 +20,12 @@ class HabitLogViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         habits = RealmHelper.retrieveHabits()
-        
+        let notification = NSNotificationCenter.defaultCenter()
+        notification.addObserver(self, selector: #selector(self.reloadTable), name: "EnterForeground", object: nil)
+    }
+    
+    func reloadTable() {
+        tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -43,6 +48,7 @@ class HabitLogViewController: UITableViewController {
         cell.habitNameLabel.text = habit.name
         
         cell.habitFrequencyLabel.text = String(habit.habitFrequency)
+        
     
         // Function to differentiate between a newly created habit(during the same session) and an existing one
         if habit.dateCompleted.count != 0 {
@@ -59,6 +65,8 @@ class HabitLogViewController: UITableViewController {
         } else {
             cell.habitFrequencyButton.enabled = true
         }
+        
+        print(habit.week)
 
         cell.habit = habit
         

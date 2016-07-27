@@ -8,4 +8,32 @@
 
 import Foundation
 import UIKit
+import RealmSwift
+
+struct Reset {
+    
+    let realm = try! Realm()
+    
+    func checkReset() {
+        let results = realm.objects(Habit)
+        
+        for habit: Habit in results {
+            let currentWeek = currentWeekValue()
+            if habit.week != currentWeek {
+                try! Realm().write {
+                    habit.week = currentWeek
+                    habit.frequency = 0
+                }
+            }
+        }
+    }
+    
+    func currentWeekValue() -> Int{
+        let todayDate = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let dateComponents = calendar.component(NSCalendarUnit.WeekOfYear, fromDate: todayDate)
+        return dateComponents.hashValue
+    }
+}
+
 

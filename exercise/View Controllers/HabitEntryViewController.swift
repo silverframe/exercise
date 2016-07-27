@@ -102,6 +102,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 let newHabit = Habit()
                 newHabit.name = habitTextField.text
                 newHabit.habitFrequency = Int(weeklyTargetSlider.value)
+                newHabit.week = habit.currentWeekValue()
                     RealmHelper.updateHabit(habit, newHabit: newHabit)}
                 
             } else {
@@ -111,6 +112,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 let habit = Habit()
                 habit.name = habitTextField.text
                 habit.habitFrequency = Int(weeklyTargetSlider.value)
+//                habit.week = habit.currentWeekValue()
                     RealmHelper.addHabit(habit)}
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
