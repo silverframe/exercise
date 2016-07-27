@@ -10,7 +10,7 @@ import EventKit
 import UIKit
 import CVCalendar
 
-class CalendarProgressViewController: UIViewController {
+class CalendarProgressViewController: UIViewController, CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
     
     var habit: Habit? 
     
@@ -20,26 +20,55 @@ class CalendarProgressViewController: UIViewController {
     
     
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+//    override func viewDidLayoutSubviews() {
+//        super.viewDidLayoutSubviews()
+//        
+//        menuView.delegate = self
+//        calendarView.delegate = self
+//        
+//        menuView.commitMenuViewUpdate()
+//        calendarView.commitCalendarViewUpdate()
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         menuView.delegate = self
         calendarView.delegate = self
-        
         menuView.commitMenuViewUpdate()
         calendarView.commitCalendarViewUpdate()
+        
+        for date: Date in habit!.dateCompleted {
+            calendarView.(date.date)
+        }
+
+        
     }
     
-}
-
-extension CalendarProgressViewController:  CVCalendarViewDelegate, CVCalendarMenuViewDelegate{
     
     func presentationMode() -> CalendarMode {
         return .MonthView
     }
     
     func firstWeekday() -> Weekday {
-        return .Monday
+        return .Sunday
+    }
+    
+    func toggleMonthViewWithMonthOffset(offset: Int) {
+        let calendar = NSCalendar.currentCalendar()
+        let calendarManager = CVCalendarManager.self
+        let components = calendarManager.componentsForDate(NSDate()) // from today
+        
+        components.month += offset
+        components.day = 4 // CVCalendar will select this day view
+        
+        let resultDate = calendar.dateFromComponents(components)!
+        
+        self.calendarView.toggleViewWithDate(resultDate)
+        self.calendarView.changeDaysOutShowingState(true)
+        self.calendarView.shouldShowWeekdaysOut
+        self.title = String(components.month)
+        
     }
     
 
