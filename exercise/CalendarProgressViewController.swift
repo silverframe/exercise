@@ -9,68 +9,39 @@
 import EventKit
 import UIKit
 import CVCalendar
+import FSCalendar
 
-class CalendarProgressViewController: UIViewController, CVCalendarViewDelegate, CVCalendarMenuViewDelegate {
+class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
-    var habit: Habit? 
-    
-    @IBOutlet weak var menuView: CVCalendarMenuView!
-    
-    @IBOutlet weak var calendarView: CVCalendarView!
-    
-    
-    
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//        
-//        menuView.delegate = self
-//        calendarView.delegate = self
-//        
-//        menuView.commitMenuViewUpdate()
-//        calendarView.commitCalendarViewUpdate()
-//    }
+    var habit: Habit?
+    var date = NSDate()
+
+    @IBOutlet weak var calendarView1: FSCalendar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuView.delegate = self
-        calendarView.delegate = self
-        menuView.commitMenuViewUpdate()
-        calendarView.commitCalendarViewUpdate()
+        let calendarView1 = FSCalendar(frame: CGRect(x: 0, y: 60, width: 320, height: 300))
+        calendarView1.delegate = self
+        calendarView1.dataSource = self
+        view.addSubview(calendarView1)
+        self.calendarView1 = calendarView1
+
+        calendarView1.scrollDirection = .Horizontal
+        calendarView1.allowsMultipleSelection = true
+        calendarView1.appearance.headerDateFormat = "MMM yy"
+        calendarView1.appearance.cellStyle = .Rectangle
+        calendarView1.clipsToBounds = true
         
-        for date: Date in habit!.dateCompleted {
-            calendarView.(date.date)
+        if let habit = habit {
+        for date: Date in habit.dateCompleted {
+            calendarView1.selectDate(date.date)
+            }
         }
-
+        
+        calendarView1.currentPage = date
         
     }
     
-    
-    func presentationMode() -> CalendarMode {
-        return .MonthView
-    }
-    
-    func firstWeekday() -> Weekday {
-        return .Sunday
-    }
-    
-    func toggleMonthViewWithMonthOffset(offset: Int) {
-        let calendar = NSCalendar.currentCalendar()
-        let calendarManager = CVCalendarManager.self
-        let components = calendarManager.componentsForDate(NSDate()) // from today
-        
-        components.month += offset
-        components.day = 4 // CVCalendar will select this day view
-        
-        let resultDate = calendar.dateFromComponents(components)!
-        
-        self.calendarView.toggleViewWithDate(resultDate)
-        self.calendarView.changeDaysOutShowingState(true)
-        self.calendarView.shouldShowWeekdaysOut
-        self.title = String(components.month)
-        
-    }
-    
-
     
 }

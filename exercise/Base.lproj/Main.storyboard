@@ -487,7 +487,7 @@
             </objects>
             <point key="canvasLocation" x="1726" y="345"/>
         </scene>
-        <!--Title-->
+        <!--Calendar Progress-->
         <scene sceneID="Bew-Sp-Wh2">
             <objects>
                 <viewController id="lif-db-qcP" customClass="CalendarProgressViewController" customModule="exercise" customModuleProvider="target" sceneMemberID="viewController">
@@ -499,41 +499,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69t-EK-nap" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                <rect key="frame" x="0.0" y="64" width="600" height="74"/>
-                                <color key="backgroundColor" red="0.61436599493026733" green="0.39463987946510315" blue="0.89403945207595825" alpha="0.52324892241379306" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VAy-Vr-T8W" customClass="CVCalendarView" customModule="CVCalendar">
-                                <rect key="frame" x="0.0" y="138" width="600" height="318"/>
-                                <color key="backgroundColor" red="0.078431372550000003" green="0.40784313729999999" blue="0.61176470589999998" alpha="0.72567349137931036" colorSpace="calibratedRGB"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb">
+                                <rect key="frame" x="39" y="137" width="522" height="243"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="VAy-Vr-T8W" firstAttribute="top" secondItem="69t-EK-nap" secondAttribute="bottom" id="4pm-Ov-c7v"/>
-                            <constraint firstItem="69t-EK-nap" firstAttribute="leading" secondItem="VAy-Vr-T8W" secondAttribute="leading" id="BMR-wS-ENo"/>
-                            <constraint firstItem="69t-EK-nap" firstAttribute="trailing" secondItem="VAy-Vr-T8W" secondAttribute="trailing" id="BzD-Gt-4Nc"/>
-                            <constraint firstAttribute="bottom" secondItem="69t-EK-nap" secondAttribute="bottom" constant="516" id="J7w-QE-9g2"/>
-                            <constraint firstItem="VAy-Vr-T8W" firstAttribute="top" secondItem="JSh-1R-cEp" secondAttribute="top" constant="291" id="OQc-QB-ZWz"/>
-                            <constraint firstItem="VAy-Vr-T8W" firstAttribute="top" secondItem="JSh-1R-cEp" secondAttribute="top" constant="138" id="WZ9-Si-B2w"/>
-                            <constraint firstItem="VAy-Vr-T8W" firstAttribute="top" secondItem="69t-EK-nap" secondAttribute="bottom" constant="10" id="gaO-Y7-Cdh"/>
-                            <constraint firstItem="VAy-Vr-T8W" firstAttribute="top" secondItem="JSh-1R-cEp" secondAttribute="top" constant="138" id="giB-G4-2KQ"/>
-                            <constraint firstItem="69t-EK-nap" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="j4d-YT-CWW"/>
-                            <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="VAy-Vr-T8W" secondAttribute="bottom" constant="100" id="paJ-Wg-Jr6"/>
-                            <constraint firstAttribute="trailing" secondItem="69t-EK-nap" secondAttribute="trailing" id="rgp-RP-DKi"/>
-                            <constraint firstItem="69t-EK-nap" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="xtq-F3-2rf"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="J7w-QE-9g2"/>
-                                <exclude reference="OQc-QB-ZWz"/>
-                                <exclude reference="gaO-Y7-Cdh"/>
-                                <exclude reference="giB-G4-2KQ"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="poJ-2v-10I">
+                    <navigationItem key="navigationItem" title="Calendar Progress" id="poJ-2v-10I">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="gBr-u6-LH1">
                             <connections>
                                 <segue destination="IoQ-yg-Sim" kind="unwind" unwindAction="unwindToHabitLogViewController:" id="kEk-6N-183"/>
@@ -542,8 +516,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="calendarView" destination="VAy-Vr-T8W" id="en9-gf-MRA"/>
-                        <outlet property="menuView" destination="69t-EK-nap" id="1Sq-4g-ooZ"/>
+                        <outlet property="calendarView1" destination="LhB-pc-Czb" id="ZA7-La-29i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzc-Iz-FYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
