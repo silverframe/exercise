@@ -84,13 +84,14 @@ class HabitLogViewController: UITableViewController {
         if let identifier = segue.identifier {
             if identifier == "editHabit" {
                 print("table cell tapped")
-                
                 let indexPath = tableView.indexPathForSelectedRow!
                 let habit = habits[indexPath.row]
                 let editAlarmViewController = segue.destinationViewController as! HabitEntryViewController
                 editAlarmViewController.habit = habit
             } else if identifier == "addHabit" {
                 print("+ button tapped")
+            } else if identifier == "showCal" {
+                let 
             }
         }
     }

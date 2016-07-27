@@ -58,6 +58,9 @@
                                             <rect key="frame" x="431" y="1" width="46" height="40.5"/>
                                             <accessibility key="accessibilityConfiguration" identifier="CalButton"/>
                                             <state key="normal" title="Cal"/>
+                                            <connections>
+                                                <segue destination="lif-db-qcP" kind="show" identifier="showCal" id="Bib-4q-UNJ"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
