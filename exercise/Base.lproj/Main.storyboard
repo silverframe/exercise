@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +24,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
                                             <rect key="frame" x="15" y="11" width="200" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="lfG-pz-jup"/>
@@ -31,14 +33,14 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-Qk-gWg">
-                                            <rect key="frame" x="478" y="13" width="42" height="18"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-Qk-gWg">
+                                            <rect key="frame" x="485" y="13" width="42" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
-                                            <rect key="frame" x="535" y="3" width="37" height="37"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
+                                            <rect key="frame" x="542" y="9" width="30" height="25.5"/>
                                             <color key="backgroundColor" red="0.61436599493026733" green="0.39463987946510315" blue="0.89403945207595825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton"/>
                                             <state key="normal">
@@ -54,8 +56,8 @@
                                                 <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UP-AK-8Qp">
-                                            <rect key="frame" x="431" y="1" width="46" height="40.5"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UP-AK-8Qp">
+                                            <rect key="frame" x="447" y="1" width="30" height="41"/>
                                             <accessibility key="accessibilityConfiguration" identifier="CalButton"/>
                                             <state key="normal" title="Cal"/>
                                             <connections>
@@ -72,6 +74,7 @@
                                         <constraint firstItem="Ibi-Qk-gWg" firstAttribute="leading" secondItem="9UP-AK-8Qp" secondAttribute="trailing" constant="8" id="b4z-a9-r0B"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="20" id="d95-N2-EKd"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="baseline" secondItem="Gac-l8-oWu" secondAttribute="baseline" id="e8T-4f-Osq"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="firstBaseline" secondItem="9UP-AK-8Qp" secondAttribute="baseline" id="f1W-11-CBD"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Gac-l8-oWu" secondAttribute="bottom" constant="1" id="lyl-2k-mOe"/>
                                         <constraint firstItem="9UP-AK-8Qp" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="top" constant="1" id="xjk-AW-nFn"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ibi-Qk-gWg" secondAttribute="bottom" constant="5" id="zeU-3E-nPz"/>
@@ -520,7 +523,11 @@
                         <barButtonItem title="Item" id="oQZ-jW-dfC"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Title" id="poJ-2v-10I">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="gBr-u6-LH1"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="gBr-u6-LH1">
+                            <connections>
+                                <segue destination="IoQ-yg-Sim" kind="unwind" unwindAction="unwindToHabitLogViewController:" id="kEk-6N-183"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -529,6 +536,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzc-Iz-FYq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IoQ-yg-Sim" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1030" y="-325"/>
         </scene>
