@@ -15,6 +15,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     
     var habit: Habit?
     var date = NSDate()
+    var today = NSDate()
 
     @IBOutlet weak var calendarView1: FSCalendar!
     
@@ -28,7 +29,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let calendarView1 = FSCalendar(frame: CGRect(x: 0, y: 60, width: 310, height: 300))
+        let calendarView1 = FSCalendar(frame: CGRect(x: 5, y: 60, width: 310, height: 300))
         calendarView1.delegate = self
         calendarView1.dataSource = self
         view.addSubview(calendarView1)
@@ -36,19 +37,18 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
 
         calendarView1.scrollDirection = .Horizontal
         calendarView1.allowsMultipleSelection = true
-        calendarView1.appearance.headerDateFormat = "MMM yy"
+        calendarView1.appearance.headerDateFormat = "MMMM"
         calendarView1.appearance.cellShape = .Circle
         calendarView1.clipsToBounds = true
         calendarView1.appearance.headerMinimumDissolvedAlpha = 0.0;
 
         if let habit = habit {
+        self.title = "Progress"
         for date: Date in habit.dateCompleted {
             calendarView1.selectDate(date.date)
             }
         calendarView1.allowsSelection = false
         }
-        
-        calendar(calendarView1, shouldSelectDate: date)
         
         calendarView1.currentPage = date
         
@@ -77,7 +77,5 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         }
     }
     
-    func calendar(calendar: FSCalendar, shouldSelectDate date: NSDate) -> Bool {
-        return true
-    }
+
 }

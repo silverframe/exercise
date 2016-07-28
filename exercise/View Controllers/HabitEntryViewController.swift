@@ -93,9 +93,10 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let habitLogViewController = segue.destinationViewController as! HabitLogViewController
+        
 
         if segue.identifier == "save" {
+            let habitLogViewController = segue.destinationViewController as! HabitLogViewController
             if let habit = habit {
                 if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
@@ -116,6 +117,8 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                     RealmHelper.addHabit(habit)}
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
+        } else if segue.identifier == "getReminder" {
+            print("reminder tapped")
         }
     }
     
@@ -123,6 +126,12 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         let incompleteAlert = UIAlertController(title: "Oh Snap!", message: "Please fill in the required fields." , preferredStyle: .Alert)
         incompleteAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
         presentViewController(incompleteAlert, animated: true, completion: nil)}
+    
+    @IBAction func unwindToHabitEntryViewController(segue: UIStoryboardSegue) {
+        
+        
+    }
+    
 }
 
 extension HabitEntryViewController {
