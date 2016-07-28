@@ -30,10 +30,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView1.scrollDirection = .Horizontal
         calendarView1.allowsMultipleSelection = true
         calendarView1.appearance.headerDateFormat = "MMM yy"
-        calendarView1.appearance.cellStyle = .Rectangle
+        calendarView1.appearance.cellShape = .Rectangle
         calendarView1.clipsToBounds = true
-        
-        showHabits()
         
         if let habit = habit {
         for date: Date in habit.dateCompleted {
@@ -45,9 +43,14 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         
     }
     
-    func showHabits() {
-        calendarView1.selectDate(NSDate())
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == "editHabitCal" {
+                print("Edit bar button tapped")
+                let habit1 = habit
+                let habitEntryViewController = segue.destinationViewController as! HabitEntryViewController
+                habitEntryViewController.habit = habit1
+            }
+        }
     }
-    
-    
 }

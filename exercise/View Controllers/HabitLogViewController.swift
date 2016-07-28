@@ -47,8 +47,6 @@ class HabitLogViewController: UITableViewController {
         
         cell.habitNameLabel.text = habit.name
         
-//        cell.habitFrequencyLabel.text = String(habit.habitFrequency)
-        
     
         // Function to differentiate between a newly created habit(during the same session) and an existing one
         if habit.dateCompleted.count != 0 {
@@ -80,19 +78,16 @@ class HabitLogViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
-            if identifier == "editHabit" {
+            if identifier == "showCalCell" {
                 print("table cell tapped")
                 let indexPath = tableView.indexPathForSelectedRow!
                 let habit = habits[indexPath.row]
-                let editAlarmViewController = segue.destinationViewController as! HabitEntryViewController
+                let editAlarmViewController = segue.destinationViewController as! CalendarProgressViewController
                 editAlarmViewController.habit = habit
             } else if identifier == "addHabit" {
                 print("+ button tapped")
             } else if identifier == "showCal" {
-//                let indexPath = tableView.indexPathForSelectedRow!
-//                let habit = habits[indexPath.row]
-//                let calendarProgressViewController = segue.destinationViewController as! CalendarProgressViewController
-//                calendarProgressViewController.habit = habit
+
             }
         }
     }

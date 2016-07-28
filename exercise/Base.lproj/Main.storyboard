@@ -45,9 +45,6 @@
                                             <rect key="frame" x="497" y="1" width="30" height="41"/>
                                             <accessibility key="accessibilityConfiguration" identifier="CalButton"/>
                                             <state key="normal" title="Cal"/>
-                                            <connections>
-                                                <segue destination="lif-db-qcP" kind="show" identifier="showCal" id="Bib-4q-UNJ"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -65,7 +62,7 @@
                                 <connections>
                                     <outlet property="habitFrequencyButton" destination="Gac-l8-oWu" id="UhV-ZN-Usu"/>
                                     <outlet property="habitNameLabel" destination="qEt-Id-eTH" id="xx9-lD-FC0"/>
-                                    <segue destination="bId-3V-Bvo" kind="show" identifier="editHabit" id="oNu-4R-IJC"/>
+                                    <segue destination="lif-db-qcP" kind="show" identifier="showCalCell" id="Q6M-DB-whu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -380,7 +377,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wq-EX-WF0" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="3RA-2i-nqU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="345"/>
+            <point key="canvasLocation" x="1030" y="422"/>
         </scene>
         <!--Weekly Target View Controller-->
         <scene sceneID="b3K-PS-wje">
@@ -466,7 +463,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qZn-UY-lmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1726" y="345"/>
+            <point key="canvasLocation" x="1805" y="589"/>
         </scene>
         <!--Calendar Progress-->
         <scene sceneID="Bew-Sp-Wh2">
@@ -512,6 +509,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Back" id="gBr-u6-LH1">
                             <connections>
                                 <segue destination="IoQ-yg-Sim" kind="unwind" unwindAction="unwindToHabitLogViewController:" id="kEk-6N-183"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="iRh-AP-uHG">
+                            <connections>
+                                <segue destination="bId-3V-Bvo" kind="show" identifier="editHabitCal" id="4dB-tL-sVl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
