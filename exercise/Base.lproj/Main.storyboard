@@ -33,31 +33,16 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-Qk-gWg">
-                                            <rect key="frame" x="485" y="13" width="42" height="18"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
-                                            <rect key="frame" x="542" y="9" width="30" height="25.5"/>
-                                            <color key="backgroundColor" red="0.61436599493026733" green="0.39463987946510315" blue="0.89403945207595825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton"/>
-                                            <state key="normal">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                    <integer key="value" value="16"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            </userDefinedRuntimeAttributes>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
+                                            <rect key="frame" x="534" y="8" width="43" height="25.5"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton" label="done"/>
+                                            <state key="normal" title="Done"/>
                                             <connections>
                                                 <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UP-AK-8Qp">
-                                            <rect key="frame" x="447" y="1" width="30" height="41"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UP-AK-8Qp">
+                                            <rect key="frame" x="497" y="1" width="30" height="41"/>
                                             <accessibility key="accessibilityConfiguration" identifier="CalButton"/>
                                             <state key="normal" title="Cal"/>
                                             <connections>
@@ -66,23 +51,19 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="Ibi-Qk-gWg" secondAttribute="trailing" constant="15" id="1Cq-bl-DRz"/>
                                         <constraint firstAttribute="bottom" secondItem="9UP-AK-8Qp" secondAttribute="bottom" constant="2" id="DuD-sL-XuM"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leadingMargin" constant="7" id="QDm-mg-Ior"/>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="1" id="UwR-KG-eFt"/>
-                                        <constraint firstItem="Ibi-Qk-gWg" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="5" id="Wq0-Ji-bm0"/>
-                                        <constraint firstItem="Ibi-Qk-gWg" firstAttribute="leading" secondItem="9UP-AK-8Qp" secondAttribute="trailing" constant="8" id="b4z-a9-r0B"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="20" id="d95-N2-EKd"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="baseline" secondItem="Gac-l8-oWu" secondAttribute="baseline" id="e8T-4f-Osq"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="firstBaseline" secondItem="9UP-AK-8Qp" secondAttribute="baseline" id="f1W-11-CBD"/>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="9UP-AK-8Qp" secondAttribute="trailing" constant="15" id="hMH-Sd-K5V"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Gac-l8-oWu" secondAttribute="bottom" constant="1" id="lyl-2k-mOe"/>
                                         <constraint firstItem="9UP-AK-8Qp" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="top" constant="1" id="xjk-AW-nFn"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Ibi-Qk-gWg" secondAttribute="bottom" constant="5" id="zeU-3E-nPz"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="habitFrequencyButton" destination="Gac-l8-oWu" id="UhV-ZN-Usu"/>
-                                    <outlet property="habitFrequencyLabel" destination="Ibi-Qk-gWg" id="2nJ-rP-i2g"/>
                                     <outlet property="habitNameLabel" destination="qEt-Id-eTH" id="xx9-lD-FC0"/>
                                     <segue destination="bId-3V-Bvo" kind="show" identifier="editHabit" id="oNu-4R-IJC"/>
                                 </connections>
@@ -499,12 +480,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb">
-                                <rect key="frame" x="39" y="137" width="522" height="243"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb">
+                                <rect key="frame" x="0.0" y="64" width="561" height="316"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="ZZl-Vj-i9N"/>
+                            <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" constant="176" id="Zft-mj-S43"/>
+                            <constraint firstAttribute="trailing" secondItem="LhB-pc-Czb" secondAttribute="trailing" constant="39" id="nuj-o4-De7"/>
+                            <constraint firstItem="LhB-pc-Czb" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="sLx-dm-Tiq"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Calendar Progress" id="poJ-2v-10I">

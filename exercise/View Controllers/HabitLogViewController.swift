@@ -47,7 +47,7 @@ class HabitLogViewController: UITableViewController {
         
         cell.habitNameLabel.text = habit.name
         
-        cell.habitFrequencyLabel.text = String(habit.habitFrequency)
+//        cell.habitFrequencyLabel.text = String(habit.habitFrequency)
         
     
         // Function to differentiate between a newly created habit(during the same session) and an existing one

@@ -21,7 +21,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let calendarView1 = FSCalendar(frame: CGRect(x: 0, y: 60, width: 320, height: 300))
+        let calendarView1 = FSCalendar(frame: CGRect(x: 0, y: 60, width: 310, height: 300))
         calendarView1.delegate = self
         calendarView1.dataSource = self
         view.addSubview(calendarView1)

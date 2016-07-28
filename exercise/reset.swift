@@ -13,10 +13,8 @@ import RealmSwift
 struct Reset {
     
     let realm = try! Realm()
-    
     func checkReset() {
         let results = realm.objects(Habit)
-        
         for habit: Habit in results {
             let currentWeek = currentWeekValue()
             if habit.week != currentWeek {
@@ -28,7 +26,7 @@ struct Reset {
         }
     }
     
-    func currentWeekValue() -> Int{
+    func currentWeekValue() -> Int {
         let todayDate = NSDate()
         let calendar = NSCalendar.currentCalendar()
         let dateComponents = calendar.component(NSCalendarUnit.WeekOfYear, fromDate: todayDate)

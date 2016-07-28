@@ -12,7 +12,7 @@ class ListHabitTableViewCell: UITableViewCell {
     
     var habit: Habit?
     
-    @IBOutlet weak var habitFrequencyLabel: UILabel!
+//    @IBOutlet weak var habitFrequencyLabel: UILabel!
 
     @IBOutlet weak var habitFrequencyButton: UIButton!
     
@@ -22,16 +22,19 @@ class ListHabitTableViewCell: UITableViewCell {
         if let habit = habit {
             //Changes the no of total completions, current streak, frequency
             habit.frequencyChange()
-            self.habitFrequencyLabel.text = String(habit.habitFrequency)
-            let date2 = habit.dateCompleted[0].date
+            if habit.dateCompleted.count != 0 {
+            let date = habit.dateCompleted[0].date
             let calendar = NSCalendar.currentCalendar()
             calendar.timeZone = NSTimeZone.defaultTimeZone()
-            let datesAreInTheSameDay = calendar.isDateInToday(date2)
+            let datesAreInTheSameDay = calendar.isDateInToday(date)
             if datesAreInTheSameDay != true {
                 sender.enabled = true
             } else {
                 sender.enabled = false
                 }
             }
+            
+            
         }
     }
+}
