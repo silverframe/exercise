@@ -30,6 +30,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var weeklyCompletionsFigureLabel: UILabel!
     
+    @IBOutlet weak var totalCompletionsFigure: UILabel!
     @IBOutlet weak var longestStreakFigure: UILabel!
     
     @IBOutlet weak var currentStreakFigure: UILabel!
@@ -52,6 +53,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             longestStreakFigure.text = String(habit.longestStreak)
             let habitFrequency = String(habit.habitFrequency)
             weeklyCompletionsFigureLabel.text = "\(habit.completions)/\(habitFrequency)"
+            totalCompletionsFigure.text = String(habit.completions)
             //need to create a weekly completions
             
         } else {

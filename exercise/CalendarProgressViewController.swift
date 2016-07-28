@@ -19,6 +19,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     @IBOutlet weak var calendarView1: FSCalendar!
     
     @IBOutlet weak var weeklyTargetNo: UILabel!
+    @IBOutlet weak var totalCompletionsNo: UILabel!
     @IBOutlet weak var longestStreakNo: UILabel!
     @IBOutlet weak var currentStreakNo: UILabel!
     
@@ -36,7 +37,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView1.scrollDirection = .Horizontal
         calendarView1.allowsMultipleSelection = true
         calendarView1.appearance.headerDateFormat = "MMM yy"
-        calendarView1.appearance.cellShape = .Rectangle
+        calendarView1.appearance.cellShape = .Circle
         calendarView1.clipsToBounds = true
         
         if let habit = habit {
@@ -57,6 +58,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
             currentStreakNo.text = String(habit.currentStreak)
             longestStreakNo.text = String(habit.longestStreak)
             weeklyTargetNo.text = "\(habit.completions)/\(habit.habitFrequency)"
+            totalCompletionsNo.text = String(habit.completions)
         }
     }
     
