@@ -484,14 +484,28 @@
                                 <rect key="frame" x="0.0" y="64" width="561" height="316"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYC-jh-S0z">
+                                <rect key="frame" x="0.0" y="380" width="600" height="176"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VYC-jh-S0z" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="VEe-Vq-3GO"/>
                             <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="ZZl-Vj-i9N"/>
                             <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" constant="176" id="Zft-mj-S43"/>
+                            <constraint firstItem="VYC-jh-S0z" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="aaL-Kr-IRo"/>
+                            <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="hGr-x9-Bem"/>
+                            <constraint firstAttribute="trailing" secondItem="VYC-jh-S0z" secondAttribute="trailing" id="hQf-zZ-ZW7"/>
+                            <constraint firstItem="VYC-jh-S0z" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="koz-Zf-Oth"/>
                             <constraint firstAttribute="trailing" secondItem="LhB-pc-Czb" secondAttribute="trailing" constant="39" id="nuj-o4-De7"/>
                             <constraint firstItem="LhB-pc-Czb" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="sLx-dm-Tiq"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="aaL-Kr-IRo"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Calendar Progress" id="poJ-2v-10I">

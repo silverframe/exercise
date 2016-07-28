@@ -33,6 +33,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView1.appearance.cellStyle = .Rectangle
         calendarView1.clipsToBounds = true
         
+        showHabits()
+        
         if let habit = habit {
         for date: Date in habit.dateCompleted {
             calendarView1.selectDate(date.date)
@@ -41,6 +43,10 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         
         calendarView1.currentPage = date
         
+    }
+    
+    func showHabits() {
+        calendarView1.selectDate(NSDate())
     }
     
     

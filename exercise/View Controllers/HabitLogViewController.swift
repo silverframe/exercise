@@ -89,7 +89,7 @@ class HabitLogViewController: UITableViewController {
             } else if identifier == "addHabit" {
                 print("+ button tapped")
             } else if identifier == "showCal" {
-//                let indexPath = tableView.indexPathForRowAtPoint(CGPoint)
+//                let indexPath = tableView.indexPathForSelectedRow!
 //                let habit = habits[indexPath.row]
 //                let calendarProgressViewController = segue.destinationViewController as! CalendarProgressViewController
 //                calendarProgressViewController.habit = habit
