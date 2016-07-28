@@ -18,6 +18,12 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
 
     @IBOutlet weak var calendarView1: FSCalendar!
     
+    @IBOutlet weak var weeklyTargetNo: UILabel!
+    @IBOutlet weak var longestStreakNo: UILabel!
+    @IBOutlet weak var currentStreakNo: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +47,17 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         
         calendarView1.currentPage = date
         
+    }
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let habit = habit {
+            currentStreakNo.text = String(habit.currentStreak)
+            longestStreakNo.text = String(habit.longestStreak)
+            weeklyTargetNo.text = "\(habit.completions)/\(habit.habitFrequency)"
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
