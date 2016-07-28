@@ -39,8 +39,8 @@ class RealmHelper {
         let realm = try! Realm()
         try! realm.write() {
             habitToBeUpdated.name = newHabit.name
-            habitToBeUpdated.habitFrequency = newHabit.habitFrequency
-            habitToBeUpdated.frequencyPeriod = newHabit.frequencyPeriod
+            habitToBeUpdated.weeklyTarget = newHabit.weeklyTarget
+
         }
     }
     
@@ -77,7 +77,7 @@ class RealmHelper {
     static func resetWeeklyTarget(habitToBeUpdated: Habit, newHabit: Habit) {
         let realm = try! Realm()
         try! realm.write(){
-            newHabit.frequency = 0 
+            newHabit.weeklyCompletions = 0
         }
     }
     

@@ -20,7 +20,7 @@ struct Reset {
             if habit.week != currentWeek {
                 try! Realm().write {
                     habit.week = currentWeek
-                    habit.frequency = 0
+                    habit.weeklyCompletions = 0
                 }
             }
         }

@@ -22,6 +22,9 @@ class WeeklyTargetViewController: UITableViewController {
             weeklyTargetFigure.text = String(value)}
         else { weeklyTargetFigure.text = "Off"}
         
-        habit?.frequency = value 
+        if let habit = habit {
+            habit.weeklyTarget = value
+        }
+
     }
 }

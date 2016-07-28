@@ -57,8 +57,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         if let habit = habit {
             currentStreakNo.text = String(habit.currentStreak)
             longestStreakNo.text = String(habit.longestStreak)
-            weeklyTargetNo.text = "\(habit.completions)/\(habit.habitFrequency)"
-            totalCompletionsNo.text = String(habit.completions)
+            weeklyTargetNo.text = "\(habit.weeklyCompletions)/\(habit.weeklyTarget)"
+            totalCompletionsNo.text = String(habit.totalCompletions)
         }
     }
     
