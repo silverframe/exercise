@@ -39,12 +39,16 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView1.appearance.headerDateFormat = "MMM yy"
         calendarView1.appearance.cellShape = .Circle
         calendarView1.clipsToBounds = true
-        
+        calendarView1.appearance.headerMinimumDissolvedAlpha = 0.0;
+
         if let habit = habit {
         for date: Date in habit.dateCompleted {
             calendarView1.selectDate(date.date)
             }
+        calendarView1.allowsSelection = false
         }
+        
+        calendar(calendarView1, shouldSelectDate: date)
         
         calendarView1.currentPage = date
         
@@ -71,5 +75,9 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
                 habitEntryViewController.habit = habit1
             }
         }
+    }
+    
+    func calendar(calendar: FSCalendar, shouldSelectDate date: NSDate) -> Bool {
+        return true
     }
 }
