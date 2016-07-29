@@ -17,16 +17,17 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var reminderSwitch: UISwitch!
     
+    var pickerVisible = false
     @IBAction func reminderToggle(sender: UISwitch) {
+
         if sender.on {
             pickerVisible = true
-            habit?.reminder.reminderOn = true
             print("on")
         } else {
             pickerVisible = false
-            habit?.reminder.reminderOn = false
             print("off")
         }
+        tableView.reloadData()
     }
     @IBOutlet weak var reminderTimeLabel: UILabel!
     
@@ -79,6 +80,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             weeklyTargetFigure.text = String(habit.weeklyTarget)
             currentStreakFigure.text = String(habit.currentStreak)
             longestStreakFigure.text = String(habit.longestStreak)
+            reminderSwitch.on = habit.reminder.reminderOn
             let weeklyTarget = String(habit.weeklyTarget)
             weeklyCompletionsFigureLabel.text = "\(habit.weeklyCompletions)/\(weeklyTarget)"
             totalCompletionsFigure.text = String(habit.totalCompletions)
@@ -94,6 +96,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             longestStreakFigure.text = ""
             weeklyCompletionsLabel.text = ""
             weeklyCompletionsFigureLabel.text = ""
+            reminderSwitch.on = false
         }
     }
     
@@ -123,20 +126,24 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     // better look over very carefully 
     
-    var pickerVisible = false
+
     
     
-//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        
-//        if indexPath.row == 4 {
-//            if pickerVisible {
-//                return 165.0
-//            } else {
-//                return 0}
-//        }
-//        
-//        return 44.0
-//    }
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 3 {
+            if pickerVisible {
+                return 165.0
+            } else {
+                return 0.0
+            }
+        }
+        
+        if indexPath.row == 4 {
+            return 75.0
+        }
+        
+        return 44.0
+    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -152,7 +159,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 let newHabit = Habit()
                 newHabit.name = habitTextField.text
                 newHabit.reminder.time = reminderTimePicker.date
-                newHabit.reminder.reminderOn = pickerVisible
+                newHabit.reminder.reminderOn = reminderSwitch.on
                 newHabit.weeklyTarget = Int(weeklyTargetSlider.value)
                     RealmHelper.updateHabit(habit, newHabit: newHabit)}
                 
@@ -163,7 +170,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 let habit = Habit()
                 habit.name = habitTextField.text
                 habit.reminder.time = reminderTimePicker.date
-                habit.reminder.reminderOn = pickerVisible
+                habit.reminder.reminderOn = reminderSwitch.on
                 habit.weeklyTarget = Int(weeklyTargetSlider.value)
                 habit.week = habit.currentWeekValue()
                     RealmHelper.addHabit(habit)}
