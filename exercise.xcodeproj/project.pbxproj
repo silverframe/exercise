@@ -20,6 +20,9 @@
 		CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534FB1D40AEA1005FD442 /* Date.swift */; };
 		CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */; };
 		CB73CBB81D47C79200AA1076 /* Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB71D47C79200AA1076 /* Reset.swift */; };
+		CB73CBBD1D4AF07200AA1076 /* ButtonRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */; };
+		CB73CBBF1D4AF55400AA1076 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBBE1D4AF55400AA1076 /* Reminder.swift */; };
+		CB73CBC31D4AFA1200AA1076 /* EditReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBC21D4AFA1200AA1076 /* EditReminderViewController.swift */; };
 		E25B0D324CD1A74BD9F7AC33 /* Pods_exercise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74946C67DEA98151F81BE8B2 /* Pods_exercise.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +43,9 @@
 		CB3534FB1D40AEA1005FD442 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTargetViewController.swift; sourceTree = "<group>"; };
 		CB73CBB71D47C79200AA1076 /* Reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reset.swift; path = ../Reset.swift; sourceTree = "<group>"; };
+		CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonRefresh.swift; sourceTree = "<group>"; };
+		CB73CBBE1D4AF55400AA1076 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		CB73CBC21D4AFA1200AA1076 /* EditReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditReminderViewController.swift; sourceTree = "<group>"; };
 		DE8789B3E360D19A5BA0316E /* Pods-exercise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exercise.release.xcconfig"; path = "Pods/Target Support Files/Pods-exercise/Pods-exercise.release.xcconfig"; sourceTree = "<group>"; };
 		E82CB275E2E4CB1B76A33991 /* Pods-exercise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exercise.debug.xcconfig"; path = "Pods/Target Support Files/Pods-exercise/Pods-exercise.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +129,7 @@
 				CB1584E61D41C44000D6D6BB /* HabitEntryViewController.swift */,
 				CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */,
 				CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */,
+				CB73CBC21D4AFA1200AA1076 /* EditReminderViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 			children = (
 				CB3534F91D40AA3D005FD442 /* Habit.swift */,
 				CB3534FB1D40AEA1005FD442 /* Date.swift */,
+				CB73CBBE1D4AF55400AA1076 /* Reminder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				CB73CBB71D47C79200AA1076 /* Reset.swift */,
+				CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -278,6 +287,9 @@
 				CB1584E71D41C44000D6D6BB /* HabitEntryViewController.swift in Sources */,
 				CB1584EA1D41E89000D6D6BB /* RealmHelper.swift in Sources */,
 				CB3534E01D3F719E005FD442 /* AppDelegate.swift in Sources */,
+				CB73CBBF1D4AF55400AA1076 /* Reminder.swift in Sources */,
+				CB73CBBD1D4AF07200AA1076 /* ButtonRefresh.swift in Sources */,
+				CB73CBC31D4AFA1200AA1076 /* EditReminderViewController.swift in Sources */,
 				CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */,
 				CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */,
 				CB1584EC1D41EB7200D6D6BB /* HabitLogViewController.swift in Sources */,

@@ -40,6 +40,8 @@ class RealmHelper {
         try! realm.write() {
             habitToBeUpdated.name = newHabit.name
             habitToBeUpdated.weeklyTarget = newHabit.weeklyTarget
+            habitToBeUpdated.reminder.time = newHabit.reminder.time
+            habitToBeUpdated.reminder.reminderOn = newHabit.reminder.reminderOn 
 
         }
     }

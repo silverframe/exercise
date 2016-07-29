@@ -44,6 +44,8 @@ class Habit: Object {
     dynamic var uuid = NSUUID().UUIDString
     
     let dateCompleted = List<Date>()
+    
+    let reminder = Reminder() 
 
     convenience required init(habitName: String, goalFrequency: Int, date: NSDate) {
         self.init()

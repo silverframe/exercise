@@ -15,6 +15,29 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var habitTextField: UITextField!
     
+    @IBOutlet weak var reminderSwitch: UISwitch!
+    
+    @IBAction func reminderToggle(sender: UISwitch) {
+        if sender.on {
+            pickerVisible = true
+            habit?.reminder.reminderOn = true
+            print("on")
+        } else {
+            pickerVisible = false
+            habit?.reminder.reminderOn = false
+            print("off")
+        }
+    }
+    @IBOutlet weak var reminderTimeLabel: UILabel!
+    
+    @IBOutlet weak var reminderTimePicker: UIDatePicker!
+    
+    @IBAction func reminderTimeChanged(sender: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        reminderTimeLabel.text = dateFormatter.stringFromDate(sender.date)
+    }
+    
     @IBOutlet weak var weeklyTargetSlider: UISlider!
     
     @IBOutlet weak var weeklyTargetFigure: UILabel!
@@ -46,6 +69,13 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         
         if let habit = habit {
             habitTextField.text = habit.name
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.timeStyle = .ShortStyle
+            if let date = habit.reminder.time {
+                self.reminderTimeLabel.text = dateFormatter.stringFromDate(date)
+            } else {
+                self.reminderTimeLabel.text = ""
+            }
             weeklyTargetFigure.text = String(habit.weeklyTarget)
             currentStreakFigure.text = String(habit.currentStreak)
             longestStreakFigure.text = String(habit.longestStreak)
@@ -56,6 +86,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             
         } else {
             habitTextField.text = ""
+            reminderTimeLabel.text = ""
             weeklyTargetFigure.text = "7"
             currentStreakLabel.text = ""
             currentStreakFigure.text = ""
@@ -90,6 +121,22 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         setUpDefault()
     }
     
+    // better look over very carefully 
+    
+    var pickerVisible = false
+    
+    
+//    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//        if indexPath.row == 4 {
+//            if pickerVisible {
+//                return 165.0
+//            } else {
+//                return 0}
+//        }
+//        
+//        return 44.0
+//    }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -97,12 +144,15 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
 
         if segue.identifier == "save" {
             let habitLogViewController = segue.destinationViewController as! HabitLogViewController
+       
             if let habit = habit {
                 if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
                 }else {
                 let newHabit = Habit()
                 newHabit.name = habitTextField.text
+                newHabit.reminder.time = reminderTimePicker.date
+                newHabit.reminder.reminderOn = pickerVisible
                 newHabit.weeklyTarget = Int(weeklyTargetSlider.value)
                     RealmHelper.updateHabit(habit, newHabit: newHabit)}
                 
@@ -112,6 +162,8 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 } else {
                 let habit = Habit()
                 habit.name = habitTextField.text
+                habit.reminder.time = reminderTimePicker.date
+                habit.reminder.reminderOn = pickerVisible
                 habit.weeklyTarget = Int(weeklyTargetSlider.value)
                 habit.week = habit.currentWeekValue()
                     RealmHelper.addHabit(habit)}
@@ -119,6 +171,10 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             habitLogViewController.habits = RealmHelper.retrieveHabits()
         } else if segue.identifier == "getReminder" {
             print("reminder tapped")
+            let habit1 = habit
+            let editReminderViewController = segue.destinationViewController as! EditReminderViewController
+            editReminderViewController.habit = habit1 
+        
         }
     }
     
