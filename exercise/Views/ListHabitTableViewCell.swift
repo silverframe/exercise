@@ -32,8 +32,9 @@ class ListHabitTableViewCell: UITableViewCell {
                 
             } else {
                 sender.enabled = false
-                backgroundColor = UIColor(red: 221/235, green: 221/235, blue: 221/235, alpha: 1.0)
-                
+                UIView.animateWithDuration(0.8, delay: 0, options: [], animations: {
+                    self.backgroundColor = UIColor(red: 221/235, green: 221/235, blue: 221/235, alpha: 1.0)
+                    }, completion: nil)
                 }
             }
             
