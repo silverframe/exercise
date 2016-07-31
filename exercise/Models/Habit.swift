@@ -45,7 +45,7 @@ class Habit: Object {
     
     let dateCompleted = List<Date>()
     
-    dynamic var reminder = Reminder()
+    let reminder = Reminder()
 
     convenience required init(habitName: String, goalFrequency: Int, date: NSDate) {
         self.init()

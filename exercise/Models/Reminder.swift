@@ -11,10 +11,11 @@ import RealmSwift
 
 class Reminder: Object {
     
-    dynamic var time : NSDate
+    dynamic var time : NSDate?
     dynamic var reminderOn = false
     
     convenience required init(reminderTime: NSDate, on: Bool) {
+        self.init()
         time = reminderTime
         reminderOn = on
     }

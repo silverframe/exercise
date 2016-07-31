@@ -22,8 +22,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
+                                            <rect key="frame" x="10" y="9" width="31" height="31"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton" label="done"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="8RD-wD-qTm"/>
+                                                <constraint firstAttribute="width" constant="31" id="Bve-um-I1b"/>
+                                                <constraint firstAttribute="height" constant="31" id="lu7-nt-TTp"/>
+                                                <constraint firstAttribute="width" constant="31" id="wWC-bh-5a9"/>
+                                            </constraints>
+                                            <state key="normal" image="Button"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="Bve-um-I1b"/>
+                                                    <exclude reference="lu7-nt-TTp"/>
+                                                </mask>
+                                            </variation>
+                                            <connections>
+                                                <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
+                                            </connections>
+                                        </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
-                                            <rect key="frame" x="15" y="11" width="200" height="21"/>
+                                            <rect key="frame" x="49" y="14" width="200" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="lfG-pz-jup"/>
                                             </constraints>
@@ -31,22 +51,39 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
-                                            <rect key="frame" x="534" y="8" width="43" height="25.5"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton" label="done"/>
-                                            <state key="normal" title="Done"/>
-                                            <connections>
-                                                <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" id="2Rp-Rh-tar"/>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" constant="2.75" id="9Sn-lV-WrP"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="10" id="A2c-hk-9o3"/>
+                                        <constraint firstAttribute="bottom" secondItem="qEt-Id-eTH" secondAttribute="bottom" constant="1" id="BIg-rR-vFE"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="top" constant="1" id="HWX-ZV-Qdl"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="8" id="Mdh-4c-dR7"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leadingMargin" constant="7" id="QDm-mg-Ior"/>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leading" constant="10" id="T7p-S5-dYW"/>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="1" id="UwR-KG-eFt"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="20" id="d95-N2-EKd"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="baseline" secondItem="Gac-l8-oWu" secondAttribute="baseline" id="e8T-4f-Osq"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="10" id="hOn-Cg-ZzA"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Gac-l8-oWu" secondAttribute="bottom" constant="1" id="lyl-2k-mOe"/>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leading" constant="10" id="sZP-M7-IYi"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" constant="3" id="txx-Eh-Wxd"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="2Rp-Rh-tar"/>
+                                            <exclude reference="T7p-S5-dYW"/>
+                                            <exclude reference="UwR-KG-eFt"/>
+                                            <exclude reference="d95-N2-EKd"/>
+                                            <exclude reference="lyl-2k-mOe"/>
+                                            <exclude reference="A2c-hk-9o3"/>
+                                            <exclude reference="BIg-rR-vFE"/>
+                                            <exclude reference="HWX-ZV-Qdl"/>
+                                            <exclude reference="QDm-mg-Ior"/>
+                                            <exclude reference="e8T-4f-Osq"/>
+                                            <exclude reference="hOn-Cg-ZzA"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="habitFrequencyButton" destination="Gac-l8-oWu" id="UhV-ZN-Usu"/>
@@ -62,6 +99,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Habits" id="WQ9-Mr-iW9">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="tJM-Z1-UiJ">
+                            <color key="tintColor" red="0.047058823529411764" green="0.79607843137254897" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="bId-3V-Bvo" kind="show" identifier="addHabit" id="lXI-HI-57H"/>
                             </connections>
@@ -459,11 +497,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Edit Habit" id="MmA-2y-3ZV">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="3H2-2X-yfc">
+                            <color key="tintColor" red="0.047058823530000002" green="0.79607843140000001" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="3RA-2i-nqU" kind="unwind" identifier="cancel" unwindAction="unwindToHabitLogViewController:" id="CjC-XZ-3ib"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="PnA-JM-3o9">
+                            <color key="tintColor" red="0.047058823530000002" green="0.79607843140000001" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="3RA-2i-nqU" kind="unwind" identifier="save" unwindAction="unwindToHabitLogViewController:" id="zig-r2-o6F"/>
                             </connections>
@@ -775,11 +815,13 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Calendar Progress" id="poJ-2v-10I">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="gBr-u6-LH1">
+                            <color key="tintColor" red="0.047058823530000002" green="0.79607843140000001" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="IoQ-yg-Sim" kind="unwind" unwindAction="unwindToHabitLogViewController:" id="kEk-6N-183"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="iRh-AP-uHG">
+                            <color key="tintColor" red="0.047058823530000002" green="0.79607843140000001" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="bId-3V-Bvo" kind="show" identifier="editHabitCal" id="4dB-tL-sVl"/>
                             </connections>
@@ -807,6 +849,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HCr-h2-6FX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.37254901960784315" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.37254901960784315" green="0.37254901960784315" blue="0.37254901960784315" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -818,7 +865,10 @@
             <point key="canvasLocation" x="-520" y="345"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Button" width="34" height="34"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4dB-tL-sVl"/>
+        <segue reference="lXI-HI-57H"/>
     </inferredMetricsTieBreakers>
 </document>
