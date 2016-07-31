@@ -56,6 +56,7 @@ class HabitLogViewController: UITableViewController {
             let datesAreInTheSameDay = calendar.isDateInToday(date2)
             if datesAreInTheSameDay {
                 cell.habitFrequencyButton.enabled = false
+                cell.backgroundColor = UIColor(red: 221/235, green: 221/235, blue: 221/235, alpha: 1.0)
                 
             } else {
                 cell.habitFrequencyButton.enabled = true

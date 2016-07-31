@@ -29,8 +29,11 @@ class ListHabitTableViewCell: UITableViewCell {
             let datesAreInTheSameDay = calendar.isDateInToday(date)
             if datesAreInTheSameDay != true {
                 sender.enabled = true
+                
             } else {
                 sender.enabled = false
+                backgroundColor = UIColor(red: 221/235, green: 221/235, blue: 221/235, alpha: 1.0)
+                
                 }
             }
             
@@ -38,3 +41,5 @@ class ListHabitTableViewCell: UITableViewCell {
         }
     }
 }
+
+

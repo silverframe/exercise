@@ -32,6 +32,9 @@
                                                 <constraint firstAttribute="width" constant="31" id="wWC-bh-5a9"/>
                                             </constraints>
                                             <state key="normal" image="Button"/>
+                                            <state key="disabled" image="Button Selected"/>
+                                            <state key="selected" image="Button Selected"/>
+                                            <state key="highlighted" image="Button"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="Bve-um-I1b"/>
@@ -867,6 +870,7 @@
     </scenes>
     <resources>
         <image name="Button" width="34" height="34"/>
+        <image name="Button Selected" width="34" height="34"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="lXI-HI-57H"/>
