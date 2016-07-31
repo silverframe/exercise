@@ -38,9 +38,12 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView1.scrollDirection = .Horizontal
         calendarView1.allowsMultipleSelection = true
         calendarView1.appearance.headerDateFormat = "MMMM"
-        calendarView1.appearance.cellShape = .Circle
+        calendarView1.appearance.cellShape = .Rectangle
         calendarView1.clipsToBounds = true
         calendarView1.appearance.headerMinimumDissolvedAlpha = 0.0;
+        calendarView1.appearance.headerTitleColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
+        calendarView1.appearance.weekdayTextColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
+        calendarView1.appearance.selectionColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
 
         if let habit = habit {
         self.title = "Progress"
