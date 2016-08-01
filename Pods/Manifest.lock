@@ -3,6 +3,9 @@ PODS:
   - CVCalendar (1.2.9)
   - FSCalendar (2.2.0)
   - JTCalendar (2.1.7)
+  - Mixpanel (3.0.0):
+    - Mixpanel/Mixpanel (= 3.0.0)
+  - Mixpanel/Mixpanel (3.0.0)
   - Realm (1.0.1):
     - Realm/Headers (= 1.0.1)
   - Realm/Headers (1.0.1)
@@ -14,6 +17,7 @@ DEPENDENCIES:
   - CVCalendar (~> 1.2.9)
   - FSCalendar
   - JTCalendar (~> 2.0)
+  - Mixpanel
   - RealmSwift
 
 SPEC CHECKSUMS:
@@ -21,9 +25,10 @@ SPEC CHECKSUMS:
   CVCalendar: 0799256e0bc3b43e83b7e86c0729ce9ff0624cb6
   FSCalendar: 766367b91bcf2829c492c5ac50a58652c6df4ee8
   JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
+  Mixpanel: ac92056ee35a961362513ba11049e67cffcaa1f1
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
 
-PODFILE CHECKSUM: 9b3622f221b29867d82baa282b508ce646a037c4
+PODFILE CHECKSUM: ec968583fbb9ee9ee103469a7a00f78b776f289c
 
 COCOAPODS: 1.0.1

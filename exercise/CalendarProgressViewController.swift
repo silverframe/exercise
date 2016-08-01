@@ -30,6 +30,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Creating the calendar and customizing its appearance
         calendarView = FSCalendar()
         calendarView1.addSubview(calendarView)
         calendarView.frame = CGRect(x: 0, y: 0, width: 320, height: 300)
@@ -45,7 +46,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView.appearance.headerTitleColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
         calendarView.appearance.weekdayTextColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
         calendarView.appearance.selectionColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
-
+        
+        // Prevents the calendar from being selected by the user 
         if let habit = habit {
         self.title = "Progress"
         for date: Date in habit.dateCompleted {

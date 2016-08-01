@@ -11,5 +11,6 @@ target 'exercise' do
   pod 'JTCalendar', '~> 2.0'
   pod 'CVCalendar', '~> 1.2.9'
   pod 'FSCalendar'
+  pod 'Mixpanel'
 
 end

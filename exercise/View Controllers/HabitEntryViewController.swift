@@ -58,6 +58,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var weeklyCompletionsFigureLabel: UILabel!
     
     @IBOutlet weak var totalCompletionsFigure: UILabel!
+    
     @IBOutlet weak var longestStreakFigure: UILabel!
     
     @IBOutlet weak var currentStreakFigure: UILabel!
@@ -71,6 +72,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        //Creating the data for if there is an existing habit
         if let habit = habit {
             habitTextField.text = habit.name
             let dateFormatter = NSDateFormatter()
@@ -93,7 +95,9 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             totalCompletionsFigure.text = String(habit.totalCompletions)
             //need to create a weekly completions
             
+            
         } else {
+            //Creating the view for if no habit exists yet
             habitTextField.text = ""
             reminderTimeLabel.text = ""
             weeklyTargetFigure.text = "7"
@@ -120,7 +124,6 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             calendar.timeZone = NSTimeZone.defaultTimeZone()
             let datesAreInTheSameDay = calendar.isDateInToday(date2)
             let dateIstheDayBefore = calendar.isDateInYesterday(date2)
-            //look over this tomorrow
             if (datesAreInTheSameDay || dateIstheDayBefore) != true {
                 RealmHelper.updateStreakFromScratch(habit, newHabit: habit)}
             }
@@ -131,12 +134,10 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         setUpDefault()
     }
     
-    // better look over very carefully 
-    
-
-    
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        
+        //To toggle the view of the UIDatePicker 
         if indexPath.row == 3 {
             if let reminderIsOn = habit?.reminder?.reminderOn where reminderIsOn {
                 return 165.0

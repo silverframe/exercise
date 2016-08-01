@@ -9,6 +9,7 @@
 import UIKit
 import Realm
 import RealmSwift
+import Mixpanel
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -33,6 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         
         let realm = try! Realm()
+        
+        //Setting up Mixpanel 
+
+        Mixpanel.sharedInstanceWithToken(token)
+//        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+//        mixpanel.track("App launched")
         
         // set status bar colour
         UIApplication.sharedApplication().statusBarStyle = .LightContent
