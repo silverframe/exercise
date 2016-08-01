@@ -17,43 +17,44 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     var date = NSDate()
     var today = NSDate()
 
-    @IBOutlet weak var calendarView1: FSCalendar!
+    @IBOutlet weak var calendarView1: UIView!
     
     @IBOutlet weak var weeklyTargetNo: UILabel!
     @IBOutlet weak var totalCompletionsNo: UILabel!
     @IBOutlet weak var longestStreakNo: UILabel!
     @IBOutlet weak var currentStreakNo: UILabel!
     
+    var calendarView: FSCalendar!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let calendarView1 = FSCalendar(frame: CGRect(x: 5, y: 60, width: 310, height: 300))
-        calendarView1.delegate = self
-        calendarView1.dataSource = self
-        view.addSubview(calendarView1)
-        self.calendarView1 = calendarView1
+        calendarView = FSCalendar()
+        calendarView1.addSubview(calendarView)
+        calendarView.frame = CGRect(x: 0, y: 0, width: 320, height: 300)
+        calendarView.delegate = self
+        calendarView.dataSource = self
 
-        calendarView1.scrollDirection = .Horizontal
-        calendarView1.allowsMultipleSelection = true
-        calendarView1.appearance.headerDateFormat = "MMMM"
-        calendarView1.appearance.cellShape = .Rectangle
-        calendarView1.clipsToBounds = true
-        calendarView1.appearance.headerMinimumDissolvedAlpha = 0.0;
-        calendarView1.appearance.headerTitleColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
-        calendarView1.appearance.weekdayTextColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
-        calendarView1.appearance.selectionColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
+        calendarView.scrollDirection = .Horizontal
+        calendarView.allowsMultipleSelection = true
+        calendarView.appearance.headerDateFormat = "MMMM"
+        calendarView.appearance.cellShape = .Rectangle
+        calendarView.clipsToBounds = true
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0;
+        calendarView.appearance.headerTitleColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
+        calendarView.appearance.weekdayTextColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
+        calendarView.appearance.selectionColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
 
         if let habit = habit {
         self.title = "Progress"
         for date: Date in habit.dateCompleted {
-            calendarView1.selectDate(date.date)
+            calendarView.selectDate(date.date)
             }
-        calendarView1.allowsSelection = false
+        calendarView.allowsSelection = false
         }
         
-        calendarView1.currentPage = date
+        calendarView.currentPage = date
         
     }
     

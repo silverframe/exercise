@@ -40,9 +40,10 @@ class RealmHelper {
         try! realm.write() {
             habitToBeUpdated.name = newHabit.name
             habitToBeUpdated.weeklyTarget = newHabit.weeklyTarget
-            habitToBeUpdated.reminder.time = newHabit.reminder.time
-            habitToBeUpdated.reminder.reminderOn = newHabit.reminder.reminderOn 
-
+            if let reminder = habitToBeUpdated.reminder {
+                reminder.time = newHabit.reminder!.time
+                reminder.reminderOn = newHabit.reminder!.reminderOn}
+            habitToBeUpdated.reminder = newHabit.reminder
         }
     }
     

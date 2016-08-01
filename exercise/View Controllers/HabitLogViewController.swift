@@ -22,6 +22,7 @@ class HabitLogViewController: UITableViewController {
         habits = RealmHelper.retrieveHabits()
         let notification = NSNotificationCenter.defaultCenter()
         notification.addObserver(self, selector: #selector(self.reloadTable), name: "EnterForeground", object: nil)
+        self.setNeedsStatusBarAppearanceUpdate()
     }
     
     func reloadTable() {
@@ -31,6 +32,10 @@ class HabitLogViewController: UITableViewController {
     override func viewDidAppear(animated: Bool) {
         
         
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

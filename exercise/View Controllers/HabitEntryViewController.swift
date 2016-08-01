@@ -18,6 +18,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var reminderSwitch: UISwitch!
     
     var pickerVisible = false
+    
     @IBAction func reminderToggle(sender: UISwitch) {
 
         if sender.on {
@@ -27,8 +28,10 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             pickerVisible = false
             print("off")
         }
+        
         tableView.reloadData()
     }
+    
     @IBOutlet weak var reminderTimeLabel: UILabel!
     
     @IBOutlet weak var reminderTimePicker: UIDatePicker!
@@ -72,7 +75,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             habitTextField.text = habit.name
             let dateFormatter = NSDateFormatter()
             dateFormatter.timeStyle = .ShortStyle
-            if let date = habit.reminder.time {
+            if let date = habit.reminder?.time {
                 self.reminderTimeLabel.text = dateFormatter.stringFromDate(date)
             } else {
                 self.reminderTimeLabel.text = ""
@@ -80,7 +83,11 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             weeklyTargetFigure.text = String(habit.weeklyTarget)
             currentStreakFigure.text = String(habit.currentStreak)
             longestStreakFigure.text = String(habit.longestStreak)
-            reminderSwitch.on = habit.reminder.reminderOn
+            
+            if let reminderOn = habit.reminder?.reminderOn {
+                reminderSwitch.on = reminderOn
+            }
+            
             let weeklyTarget = String(habit.weeklyTarget)
             weeklyCompletionsFigureLabel.text = "\(habit.weeklyCompletions)/\(weeklyTarget)"
             totalCompletionsFigure.text = String(habit.totalCompletions)
@@ -131,7 +138,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.row == 3 {
-            if pickerVisible {
+            if let reminderIsOn = habit?.reminder?.reminderOn where reminderIsOn {
                 return 165.0
             } else {
                 return 0.0
@@ -158,8 +165,10 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 }else {
                 let newHabit = Habit()
                 newHabit.name = habitTextField.text
-                newHabit.reminder.time = reminderTimePicker.date
-                newHabit.reminder.reminderOn = reminderSwitch.on
+                if let reminder = newHabit.reminder {
+                    reminder.time = reminderTimePicker.date
+                    reminder.reminderOn = reminderSwitch.on
+                } 
                 newHabit.weeklyTarget = Int(weeklyTargetSlider.value)
                     RealmHelper.updateHabit(habit, newHabit: newHabit)}
                 
@@ -169,8 +178,9 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 } else {
                 let habit = Habit()
                 habit.name = habitTextField.text
-                habit.reminder.time = reminderTimePicker.date
-                habit.reminder.reminderOn = reminderSwitch.on
+                if let reminder = habit.reminder {
+                reminder.time = reminderTimePicker.date
+                reminder.reminderOn = reminderSwitch.on }
                 habit.weeklyTarget = Int(weeklyTargetSlider.value)
                 habit.week = habit.currentWeekValue()
                     RealmHelper.addHabit(habit)}

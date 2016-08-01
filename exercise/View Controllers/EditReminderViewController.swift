@@ -40,13 +40,15 @@ class EditReminderViewController: UIViewController {
                 let newHabit = Habit()
                 newHabit.name = habit.name
                 newHabit.weeklyTarget = habit.weeklyTarget
-                newHabit.reminder.time = reminderTimePicker.date
-                newHabit.reminder.reminderOn = false
+                if let reminder = newHabit.reminder {
+                    reminder.time = reminderTimePicker.date
+                    }
                 RealmHelper.updateHabit(habit, newHabit: newHabit)
                 
             }
             else {
-                destinationViewController.habit?.reminder.time = reminderTimePicker.date
+                if let reminder = destinationViewController.habit?.reminder?.time {
+                    destinationViewController.habit?.reminder!.time = reminderTimePicker.date }
             }
         } else if segue.identifier == "cancelReminder"{
             
@@ -71,7 +73,7 @@ extension EditReminderViewController {
     
     func setUpDefault(){
         if let habit = habit {
-            if let time = habit.reminder.time {
+            if let time = habit.reminder?.time {
                 reminderTimePicker.date = time
             } else {
                 reminderTimePicker.date = NSDate()
