@@ -36,10 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         
         //Setting up Mixpanel 
-
+        let token = "b9c475ac7b2bad4841986eef75247a53"
         Mixpanel.sharedInstanceWithToken(token)
-//        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
-//        mixpanel.track("App launched")
+        let mixpanel: Mixpanel = Mixpanel.sharedInstance()
+        mixpanel.track("App launched")
         
         // set status bar colour
         UIApplication.sharedApplication().statusBarStyle = .LightContent

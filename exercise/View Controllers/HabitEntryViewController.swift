@@ -22,11 +22,12 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     @IBAction func reminderToggle(sender: UISwitch) {
 
         if sender.on {
+            reminderSwitch.on = true
             pickerVisible = true
-            print("on")
+            
         } else {
+            reminderSwitch.on = false
             pickerVisible = false
-            print("off")
         }
         
         tableView.reloadData()
@@ -108,6 +109,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             weeklyCompletionsLabel.text = ""
             weeklyCompletionsFigureLabel.text = ""
             reminderSwitch.on = false
+            reminderTimeLabel.text = ""
         }
     }
     
@@ -138,12 +140,21 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         //To toggle the view of the UIDatePicker 
+//        if indexPath.row == 3 {
+//            if let reminderIsOn = habit?.reminder?.reminderOn where reminderIsOn {
+//                return 165.0
+//            } else {
+//                return 0.0
+//            }
+//        }
+        
         if indexPath.row == 3 {
-            if let reminderIsOn = habit?.reminder?.reminderOn where reminderIsOn {
+            if reminderSwitch.on {
                 return 165.0
             } else {
                 return 0.0
             }
+        
         }
         
         if indexPath.row == 4 {
