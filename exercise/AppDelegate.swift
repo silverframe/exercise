@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set status bar colour
         UIApplication.sharedApplication().statusBarStyle = .LightContent
         
+        //registering local notifications 
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
+        
         
         return true
     }

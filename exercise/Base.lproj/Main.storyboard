@@ -522,6 +522,7 @@
                         <outlet property="reminderTimeLabel" destination="zaX-ix-XFn" id="ddI-Vd-Yzu"/>
                         <outlet property="reminderTimePicker" destination="XEq-Yf-kw3" id="ndB-O1-wp9"/>
                         <outlet property="totalCompletionsFigure" destination="g7A-Ze-iul" id="76M-PD-ojw"/>
+                        <outlet property="totalCompletionsLabel" destination="QpN-It-InD" id="ayE-pr-5lS"/>
                         <outlet property="weeklyCompletionsFigureLabel" destination="hZG-Ly-s52" id="mEB-sF-aqB"/>
                         <outlet property="weeklyCompletionsLabel" destination="Ayz-2a-usc" id="nWr-lo-Fc3"/>
                         <outlet property="weeklyTargetFigure" destination="cmf-Rk-RJY" id="Ser-07-vrG"/>

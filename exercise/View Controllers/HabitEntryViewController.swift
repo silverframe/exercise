@@ -24,10 +24,12 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         if sender.on {
             reminderSwitch.on = true
             pickerVisible = true
+            habit?.turnReminderOn()
             
         } else {
             reminderSwitch.on = false
             pickerVisible = false
+            habit?.turnReminderOff()
         }
         
         tableView.reloadData()
@@ -59,6 +61,8 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     @IBOutlet weak var weeklyCompletionsFigureLabel: UILabel!
     
     @IBOutlet weak var totalCompletionsFigure: UILabel!
+    
+    @IBOutlet weak var totalCompletionsLabel: UILabel!
     
     @IBOutlet weak var longestStreakFigure: UILabel!
     
@@ -108,6 +112,8 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             longestStreakFigure.text = ""
             weeklyCompletionsLabel.text = ""
             weeklyCompletionsFigureLabel.text = ""
+            totalCompletionsFigure.text = ""
+            totalCompletionsLabel.text = "" 
             reminderSwitch.on = false
             reminderTimeLabel.text = ""
         }
@@ -181,8 +187,15 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                     reminder.time = reminderTimePicker.date
                     reminder.reminderOn = reminderSwitch.on
                 } 
-                newHabit.weeklyTarget = Int(weeklyTargetSlider.value)
-                    RealmHelper.updateHabit(habit, newHabit: newHabit)}
+                    newHabit.weeklyTarget = Int(weeklyTargetSlider.value)
+                    RealmHelper.updateHabit(habit, newHabit: newHabit)
+                    if reminderSwitch.on {
+                        newHabit.turnReminderOn()
+                    } else {
+                        newHabit.turnReminderOff()
+                    }
+                }
+                
                 
             } else {
                 if (habitTextField.text!.isEmpty) {
@@ -195,7 +208,11 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 reminder.reminderOn = reminderSwitch.on }
                 habit.weeklyTarget = Int(weeklyTargetSlider.value)
                 habit.week = habit.currentWeekValue()
-                    RealmHelper.addHabit(habit)}
+                    RealmHelper.addHabit(habit)
+                    if reminderSwitch.on {
+                        habit.turnReminderOn()} else
+                    {habit.turnReminderOff()
+                    }}
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
         } else if segue.identifier == "getReminder" {

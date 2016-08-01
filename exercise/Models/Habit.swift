@@ -102,7 +102,44 @@ class Habit: Object {
         return dateComponents.hashValue
     }
     
+    func turnReminderOn(){
+        if let reminder = reminder {
+            if let time = reminder.time {
+                addReminder(time)
+            }
+        }
+    }
+    
+    func turnReminderOff(){
+        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
+            for tempNotification in tempArray {
+                if let identfier = tempNotification.userInfo!["uuid"] as? String {
+                    if identfier == uuid {
+                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
+                    }
+                    
+                }
+            }
+        }
+        
+    }
 }
+
+extension Habit {
+    func addReminder(date: NSDate){
+        
+        let notification = UILocalNotification()
+        notification.alertBody = name
+        notification.alertAction = "open"
+        notification.fireDate = date
+        notification.soundName = UILocalNotificationDefaultSoundName
+        notification.timeZone = NSTimeZone.defaultTimeZone()
+        notification.userInfo = ["name": name, "UUID": uuid] 
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+}
+
 
 
 

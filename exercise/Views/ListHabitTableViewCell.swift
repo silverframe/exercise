@@ -35,13 +35,13 @@ class ListHabitTableViewCell: UITableViewCell {
             if datesAreInTheSameDay != true {
                 sender.enabled = true
                 
-                
             } else {
                 sender.enabled = false
                 Mixpanel.sharedInstance().track("Habit completed")
-                UIView.animateWithDuration(0.8, delay: 0, options: [], animations: {
+                UIView.animateWithDuration(1.2, delay: 0, options: [], animations: {
                     self.backgroundColor = UIColor(red: 221/235, green: 221/235, blue: 221/235, alpha: 1.0)
                     self.habitNameLabel.alpha = 0.2
+                    self.habitFrequencyButton.alpha = 0.8
                     }, completion: nil)
                 }
             }
