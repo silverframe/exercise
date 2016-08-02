@@ -43,9 +43,9 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView.appearance.cellShape = .Rectangle
         calendarView.clipsToBounds = true
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0;
-        calendarView.appearance.headerTitleColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
-        calendarView.appearance.weekdayTextColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
-        calendarView.appearance.selectionColor = UIColor(red: 12/235, green: 203/235, blue: 197/235, alpha: 1.0)
+        calendarView.appearance.headerTitleColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.appearance.weekdayTextColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.appearance.selectionColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
         
         // Prevents the calendar from being selected by the user 
         if let habit = habit {
@@ -57,6 +57,9 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         }
         
         calendarView.currentPage = date
+        
+        // Force the device in portrait mode when the view controller gets loaded
+        UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
         
     }
     
@@ -81,6 +84,19 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
                 habitEntryViewController.habit = habit1
             }
         }
+    }
+    
+    
+    override func shouldAutorotate() -> Bool {
+        // Lock autorotate
+        return false
+    }
+    
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        
+        // Only allow Portrait
+        return UIInterfaceOrientation.Portrait
     }
     
 

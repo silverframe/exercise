@@ -127,6 +127,12 @@ class Habit: Object {
 
 extension Habit {
     func addReminder(date: NSDate){
+        let calendar = NSCalendar.currentCalendar()
+        let type: NSCalendarUnit = [NSCalendarUnit.Weekday, NSCalendarUnit.Hour, NSCalendarUnit.Minute ]
+        let dateComponent = calendar.components(type, fromDate: date)
+        dateComponent.second = 0
+        let newDate = calendar.dateFromComponents(dateComponent)
+        let firedate = calendar.dateFromComponents(dateComponent)
         
         let notification = UILocalNotification()
         notification.alertBody = name

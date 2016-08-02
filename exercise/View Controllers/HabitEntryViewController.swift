@@ -215,13 +215,14 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                     }}
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
-        } else if segue.identifier == "getReminder" {
-            print("reminder tapped")
-            let habit1 = habit
-            let editReminderViewController = segue.destinationViewController as! EditReminderViewController
-            editReminderViewController.habit = habit1 
-        
         }
+//        else if segue.identifier == "getReminder" {
+//            print("reminder tapped")
+//            let habit1 = habit
+//            let editReminderViewController = segue.destinationViewController as! EditReminderViewController
+//            editReminderViewController.habit = habit1 
+//        
+//        }
     }
     
     func showIncompleteFieldsAlerts () {
