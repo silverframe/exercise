@@ -27,7 +27,7 @@ class HabitLogViewController: UITableViewController {
         let notification = NSNotificationCenter.defaultCenter()
         notification.addObserver(self, selector: #selector(self.reloadTable), name: "EnterForeground", object: nil)
         self.setNeedsStatusBarAppearanceUpdate()
-//        Alert().firstCompletion(self)
+        WelcomeAlerts.welcomeAlert(self)
     }
     
     func reloadTable() {
@@ -35,7 +35,7 @@ class HabitLogViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        WelcomeAlerts.firstHabitAlert(self)
         
     }
     
@@ -118,7 +118,7 @@ class HabitLogViewController: UITableViewController {
 
 extension HabitLogViewController: ModalAlertDelegate{
     func showAlert(string:String){
-            Alert().firstCompletion(self)
+            Alert().streakCompletions(self)
     }
 }
 

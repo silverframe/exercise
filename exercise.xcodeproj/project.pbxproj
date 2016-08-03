@@ -18,6 +18,7 @@
 		CB3534F41D3F84BF005FD442 /* CalendarProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534F31D3F84BF005FD442 /* CalendarProgressViewController.swift */; };
 		CB3534FA1D40AA3D005FD442 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534F91D40AA3D005FD442 /* Habit.swift */; };
 		CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534FB1D40AEA1005FD442 /* Date.swift */; };
+		CB5134301D51F7760010779B /* WelcomeAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51342F1D51F7760010779B /* WelcomeAlerts.swift */; };
 		CB6255921D51CCC800C41E26 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6255911D51CCC800C41E26 /* Alerts.swift */; };
 		CB6255941D51D52900C41E26 /* FirstAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6255931D51D52900C41E26 /* FirstAlerts.swift */; };
 		CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */; };
@@ -43,6 +44,8 @@
 		CB3534F31D3F84BF005FD442 /* CalendarProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarProgressViewController.swift; path = ../CalendarProgressViewController.swift; sourceTree = "<group>"; };
 		CB3534F91D40AA3D005FD442 /* Habit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		CB3534FB1D40AEA1005FD442 /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		CB51342F1D51F7760010779B /* WelcomeAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeAlerts.swift; sourceTree = "<group>"; };
+		CB5134501D5240D20010779B /* FSCalendar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FSCalendar.h; sourceTree = "<group>"; };
 		CB6255911D51CCC800C41E26 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		CB6255931D51D52900C41E26 /* FirstAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAlerts.swift; sourceTree = "<group>"; };
 		CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTargetViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +125,7 @@
 				CB3534E61D3F719E005FD442 /* Assets.xcassets */,
 				CB3534E81D3F719E005FD442 /* LaunchScreen.storyboard */,
 				CB3534EB1D3F719E005FD442 /* Info.plist */,
+				CB5134501D5240D20010779B /* FSCalendar.h */,
 			);
 			path = exercise;
 			sourceTree = "<group>";
@@ -155,6 +159,7 @@
 				CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */,
 				CB6255911D51CCC800C41E26 /* Alerts.swift */,
 				CB6255931D51D52900C41E26 /* FirstAlerts.swift */,
+				CB51342F1D51F7760010779B /* WelcomeAlerts.swift */,
 			);
 			path = Methods;
 			sourceTree = "<group>";
@@ -295,6 +300,7 @@
 				CB3534E01D3F719E005FD442 /* AppDelegate.swift in Sources */,
 				CB73CBBF1D4AF55400AA1076 /* Reminder.swift in Sources */,
 				CB73CBBD1D4AF07200AA1076 /* ButtonRefresh.swift in Sources */,
+				CB5134301D51F7760010779B /* WelcomeAlerts.swift in Sources */,
 				CB73CBC31D4AFA1200AA1076 /* EditReminderViewController.swift in Sources */,
 				CB6255941D51D52900C41E26 /* FirstAlerts.swift in Sources */,
 				CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */,

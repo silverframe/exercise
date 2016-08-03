@@ -10,6 +10,8 @@ import EventKit
 import UIKit
 import CVCalendar
 import FSCalendar
+import CoreGraphics
+
 
 class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FSCalendarDelegate {
     
@@ -17,7 +19,9 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     var date = NSDate()
     var today = NSDate()
 
+
     @IBOutlet weak var calendarView1: UIView!
+    @IBOutlet weak var calendarHeightContraint: NSLayoutConstraint!
     
     @IBOutlet weak var weeklyTargetNo: UILabel!
     @IBOutlet weak var totalCompletionsNo: UILabel!
@@ -36,7 +40,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView.frame = CGRect(x: 0, y: 0, width: 320, height: 300)
         calendarView.delegate = self
         calendarView.dataSource = self
-
+        
         calendarView.scrollDirection = .Horizontal
         calendarView.allowsMultipleSelection = true
         calendarView.appearance.headerDateFormat = "MMMM"
@@ -76,6 +80,10 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         }
     }
     
+//    override func viewDidLayoutSubviews() {
+//        calendarView = self.view.bounds.size.width
+//    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == "editHabitCal" {
@@ -98,6 +106,10 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         
         // Only allow Portrait
         return UIInterfaceOrientation.Portrait
+    }
+    
+    func calendar(calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        calendarView.frame = CGRect(origin: calendarView.frame.origin, size: bounds.size)
     }
     
 

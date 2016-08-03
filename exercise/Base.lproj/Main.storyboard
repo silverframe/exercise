@@ -777,7 +777,6 @@
                             <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="FpC-gF-F2t"/>
                             <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="GiL-o2-VE8"/>
                             <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="NCy-X1-68h"/>
-                            <constraint firstAttribute="trailing" secondItem="LhB-pc-Czb" secondAttribute="trailing" constant="39" id="R8M-iM-Jw0"/>
                             <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="SRd-zF-3Cx"/>
                             <constraint firstAttribute="trailing" secondItem="LhB-pc-Czb" secondAttribute="trailing" id="T8N-OV-VYQ"/>
                             <constraint firstItem="VYC-jh-S0z" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="VEe-Vq-3GO"/>
@@ -805,7 +804,6 @@
                                 <exclude reference="hQf-zZ-ZW7"/>
                                 <exclude reference="koz-Zf-Oth"/>
                                 <exclude reference="NCy-X1-68h"/>
-                                <exclude reference="R8M-iM-Jw0"/>
                                 <exclude reference="WJ6-4d-ROh"/>
                                 <exclude reference="YuV-FB-x2p"/>
                                 <exclude reference="ZZl-Vj-i9N"/>
@@ -838,6 +836,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
+                        <outlet property="calendarHeightContraint" destination="LhB-pc-Czb" id="wf1-hM-Z7m"/>
                         <outlet property="calendarView1" destination="LhB-pc-Czb" id="ZA7-La-29i"/>
                         <outlet property="currentStreakNo" destination="EPt-QM-7ho" id="wIm-Em-XtJ"/>
                         <outlet property="longestStreakNo" destination="ERP-QT-dDV" id="t9y-4x-HKJ"/>

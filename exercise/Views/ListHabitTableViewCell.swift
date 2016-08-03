@@ -46,7 +46,7 @@ class ListHabitTableViewCell: UITableViewCell {
                     self.habitNameLabel.alpha = 0.2
                     self.habitFrequencyButton.alpha = 0.8
                     }, completion: nil)
-                    if habit.totalCompletions == 1 {
+                    if habit.currentStreak == 1 {
                     delegate?.showAlert("show modal alert")
                     }
                 }
