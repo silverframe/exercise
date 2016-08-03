@@ -161,11 +161,27 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         
         }
         
-
+        // To ensure the weekly target row has sufficient height 
         if indexPath.row == 4 {
             return 75.0
         }
         
+        //To ensure the stat details don't appear when a new habit is being created
+        guard let habit = habit else {
+            if indexPath.row == 5 {
+                return 0.0
+            }
+            if indexPath.row == 6 {
+                return 0.0
+            }
+            if indexPath.row == 7 {
+                return 0.0
+            }
+            if indexPath.row == 8 {
+                return 0.0
+            }
+            return 44.0
+        }
         return 44.0
     }
     
@@ -180,14 +196,17 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
                 } else {
-                let newHabit = Habit()
-                newHabit.name = habitTextField.text
-                if let reminder = newHabit.reminder {
-                    reminder.time = reminderTimePicker.date
-                    reminder.reminderOn = reminderSwitch.on
-                } 
+                    let newHabit = Habit()
+                    newHabit.name = habitTextField.text
+                    
+                    if let reminder = newHabit.reminder {
+                        reminder.time = reminderTimePicker.date
+                        reminder.reminderOn = reminderSwitch.on
+                    }
+
                     newHabit.weeklyTarget = Int(weeklyTargetSlider.value)
                     RealmHelper.updateHabit(habit, newHabit: newHabit)
+                    
                     if reminderSwitch.on {
                         newHabit.turnReminderOn()
                     } else {
@@ -200,19 +219,23 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
                 } else {
-                let habit = Habit()
-                habit.name = habitTextField.text
-                if let reminder = habit.reminder {
-                reminder.time = reminderTimePicker.date
-                reminder.reminderOn = reminderSwitch.on }
-                habit.weeklyTarget = Int(weeklyTargetSlider.value)
-                habit.week = habit.currentWeekValue()
-                RealmHelper.addHabit(habit)
-                if reminderSwitch.on {
-                    habit.turnReminderOn()
-                } else{
-                    habit.turnReminderOff()
-                }
+                    let habit = Habit()
+                    habit.name = habitTextField.text
+                
+                    if let reminder = habit.reminder {
+                        reminder.time = reminderTimePicker.date
+                        reminder.reminderOn = reminderSwitch.on
+                    }
+                        
+                    habit.weeklyTarget = Int(weeklyTargetSlider.value)
+                    habit.week = habit.currentWeekValue()
+                    RealmHelper.addHabit(habit)
+                    
+                    if reminderSwitch.on {
+                        habit.turnReminderOn()
+                    } else{
+                        habit.turnReminderOff()
+                    }
                     
                 }
             }
@@ -224,7 +247,8 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     func showIncompleteFieldsAlerts () {
         let incompleteAlert = UIAlertController(title: "Oh Snap!", message: "Please fill in the required fields." , preferredStyle: .Alert)
         incompleteAlert.addAction(UIAlertAction(title: "Okay", style: .Default, handler: nil))
-        presentViewController(incompleteAlert, animated: true, completion: nil)}
+        presentViewController(incompleteAlert, animated: true, completion: nil)
+    }
     
     @IBAction func unwindToHabitEntryViewController(segue: UIStoryboardSegue) {
         
@@ -251,4 +275,5 @@ extension HabitEntryViewController {
             }
         }
     }
+    
 }

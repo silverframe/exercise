@@ -137,7 +137,6 @@
                                 <connections>
                                     <outlet property="habitFrequencyButton" destination="Gac-l8-oWu" id="UhV-ZN-Usu"/>
                                     <outlet property="habitNameLabel" destination="qEt-Id-eTH" id="xx9-lD-FC0"/>
-                                    <outletCollection property="gestureRecognizers" destination="NuU-Qu-55T" appends="YES" id="o3l-HS-AGa"/>
                                     <segue destination="lif-db-qcP" kind="show" identifier="showCalCell" id="Q6M-DB-whu"/>
                                 </connections>
                             </tableViewCell>
@@ -157,11 +156,6 @@
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9d-25-6gL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="NuU-Qu-55T">
-                    <connections>
-                        <action selector="swipeRight:" destination="dsb-nl-Jkh" id="MEc-I0-1K8"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="292" y="345"/>
         </scene>
