@@ -77,28 +77,33 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        //Creating the data for if there is an existing habit
+        //Creating the view for if there is an existing habit
         if let habit = habit {
             habitTextField.text = habit.name
             let dateFormatter = NSDateFormatter()
             dateFormatter.timeStyle = .ShortStyle
-            if let date = habit.reminder?.time {
-                self.reminderTimeLabel.text = dateFormatter.stringFromDate(date)
-            } else {
-                self.reminderTimeLabel.text = ""
-            }
+
             weeklyTargetFigure.text = String(habit.weeklyTarget)
             currentStreakFigure.text = String(habit.currentStreak)
             longestStreakFigure.text = String(habit.longestStreak)
+    
             
-            if let reminderOn = habit.reminder?.reminderOn {
-                reminderSwitch.on = reminderOn
+            //To ensure that reminder switch is turned on or off based on the reminderOn value. Also if the reminderOn value is true, then to display the time that the reminder is to go off.
+            if habit.reminder?.reminderOn == true {
+                if let date = habit.reminder?.time{
+                    self.reminderTimeLabel.text = dateFormatter.stringFromDate(date)
+                    self.reminderSwitch.on = true
+                }
+            } else {
+                self.reminderTimeLabel.text = ""
+                self.reminderSwitch.on = false
+                self.reminderTimePicker.date = NSDate() 
             }
+            
             
             let weeklyTarget = String(habit.weeklyTarget)
             weeklyCompletionsFigureLabel.text = "\(habit.weeklyCompletions)/\(weeklyTarget)"
             totalCompletionsFigure.text = String(habit.totalCompletions)
-            //need to create a weekly completions
             
             
         } else {
@@ -127,11 +132,11 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             
             //For updating the streak function
             if habit.dateCompleted.count != 0 {
-            let date2 = habit.dateCompleted[0].date
+            let date = habit.dateCompleted[0].date
             let calendar = NSCalendar.currentCalendar()
             calendar.timeZone = NSTimeZone.defaultTimeZone()
-            let datesAreInTheSameDay = calendar.isDateInToday(date2)
-            let dateIstheDayBefore = calendar.isDateInYesterday(date2)
+            let datesAreInTheSameDay = calendar.isDateInToday(date)
+            let dateIstheDayBefore = calendar.isDateInYesterday(date)
             if (datesAreInTheSameDay || dateIstheDayBefore) != true {
                 RealmHelper.updateStreakFromScratch(habit, newHabit: habit)}
             }
@@ -140,20 +145,13 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         }
         
         setUpDefault()
+        setUpReminderPicker()
     }
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        //To toggle the view of the UIDatePicker 
-//        if indexPath.row == 3 {
-//            if let reminderIsOn = habit?.reminder?.reminderOn where reminderIsOn {
-//                return 165.0
-//            } else {
-//                return 0.0
-//            }
-//        }
-        
+        //To toggle the appearance of the UIDatePicker
         if indexPath.row == 3 {
             if reminderSwitch.on {
                 return 165.0
@@ -163,6 +161,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         
         }
         
+
         if indexPath.row == 4 {
             return 75.0
         }
@@ -219,13 +218,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
         }
-//        else if segue.identifier == "getReminder" {
-//            print("reminder tapped")
-//            let habit1 = habit
-//            let editReminderViewController = segue.destinationViewController as! EditReminderViewController
-//            editReminderViewController.habit = habit1 
-//        
-//        }
+
     }
     
     func showIncompleteFieldsAlerts () {
@@ -248,4 +241,14 @@ extension HabitEntryViewController {
                 weeklyTargetSlider.value = 7
             }
         }
+    
+    func setUpReminderPicker(){
+        if let habit = habit {
+            if let reminder = habit.reminder {
+                if let time = reminder.time {
+                    reminderTimePicker.date = time
+                }
+            }
+        }
     }
+}
