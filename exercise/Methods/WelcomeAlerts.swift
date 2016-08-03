@@ -12,12 +12,21 @@ import JSSAlertView
 
 struct WelcomeAlerts {
     
-    static func welcomeAlert(viewController: HabitLogViewController) {
+    static func welcomeAlert1(viewController: HabitLogViewController) {
         if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") {
-            let welcomeAlert = JSSAlertView().show(viewController, title: "Welcome to Habitual!",
-                                                        text: "Tap on the + sign in the top right-hand corner to create your first habit",
+            let welcomeAlert = JSSAlertView().show(viewController, title: "Congratulations",
+                                                        text: "You have made the very wise choice to start using this app. I'm so proud of you.",
                                                         buttonText: "OK",
-                                                        color: UIColor(red: 248.0/255.0, green: 202.0/255.0, blue: 0.0/255.0, alpha: 1.0))
+                                                        color: UIColor(red: 20.0/255.0, green: 232.0/255.0, blue: 206.0/255.0, alpha: 1.0))
+        }
+    }
+    
+    static func welcomeAlert2(viewController: HabitLogViewController) {
+        if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") {
+            let welcomeAlert = JSSAlertView().show(viewController, title: "Get Started",
+                                                   text: "Tap on the + sign at the top right-hand corner to create your first daily habit",
+                                                   buttonText: "OK",
+                                                   color: UIColor(red: 248.0/255.0, green: 202.0/255.0, blue: 0.0/255.0, alpha: 1.0))
         }
     }
     
@@ -25,7 +34,7 @@ struct WelcomeAlerts {
         if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") && viewController.habits.count == 1 {
             let firstHabitAlert = JSSAlertView().show(viewController,
                                                            title: "Form good habits!",
-                                                           text: "Tap on the checkbox once you have completed the habit",
+                                                           text: "Tap on the checkbox when you have completed the habit and then select the row to check on your progress",
                                                            buttonText: "OK",
                                                            color: UIColor(red: 248.0/255.0, green: 202.0/255.0, blue: 0.0/255.0, alpha: 1.0))
 

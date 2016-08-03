@@ -150,6 +150,11 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        //Temporary fix for repeat row 
+        if indexPath.row == 1 {
+            return 0.0 
+        }
+        
         
         //To toggle the appearance of the UIDatePicker
         if indexPath.row == 3 {
