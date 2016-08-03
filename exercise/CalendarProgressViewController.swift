@@ -31,18 +31,18 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         super.viewDidLoad()
         
         //Creating the calendar and customizing its appearance
-//        calendarView.delegate = self
-//        calendarView.dataSource = self
+        calendarView.delegate = self
+        calendarView.dataSource = self
         
         calendarView.scrollDirection = .Horizontal
-//        calendarView.allowsMultipleSelection = true
-//        calendarView.appearance.headerDateFormat = "MMMM"
-//        calendarView.appearance.cellShape = .Rectangle
-//        calendarView.clipsToBounds = true
-//        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0;
-//        calendarView.appearance.headerTitleColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
-//        calendarView.appearance.weekdayTextColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
-//        calendarView.appearance.selectionColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.allowsMultipleSelection = true
+        calendarView.appearance.headerDateFormat = "MMMM"
+        calendarView.appearance.cellShape = .Rectangle
+        calendarView.clipsToBounds = true
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0;
+        calendarView.appearance.headerTitleColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.appearance.weekdayTextColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.appearance.selectionColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
         
         // Prevents the calendar from being selected by the user 
         if let habit = habit {
