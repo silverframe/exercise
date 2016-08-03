@@ -20,10 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let config = Realm.Configuration(
-            schemaVersion: 8,
+            schemaVersion: 9,
             migrationBlock: { migration, oldSchemaVersion in
                 // We haven’t migrated anything yet, so oldSchemaVersion == 0
-                if (oldSchemaVersion < 8) {
+                if (oldSchemaVersion < 9) {
                     // Nothing to do!
                     // Realm will automatically detect new properties and removed properties
                     // And will update the schema on disk automatically
@@ -80,9 +80,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.All
-    }
+//    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow) -> Int {
+//        
+//        return checkOrientation(self.window?)// This is the custom function that u need to set your custom view to each orientation which u want to lock
+//        
+//    }
+//    
+//    func checkOrientation(viewController:UIViewController?)-> Int{
+//        
+//        if(viewController == nil){
+//            
+//            return Int(UIInterfaceOrientationMask.All.rawValue)//All means all orientation
+//            
+//        }else if (viewController is CalendarProgressViewController){
+//            
+//            return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+//            
+//        }else{
+//            
+//            return checkOrientation(viewController!.presentedViewController?)
+//        }
+//    }
 
 
 }

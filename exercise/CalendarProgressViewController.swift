@@ -60,6 +60,7 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         
         // Force the device in portrait mode when the view controller gets loaded
         UIDevice.currentDevice().setValue(UIInterfaceOrientation.Portrait.rawValue, forKey: "orientation")
+
         
     }
     

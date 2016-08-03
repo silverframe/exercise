@@ -17,6 +17,10 @@ class HabitLogViewController: UITableViewController {
         }
     }
     
+    @IBAction func swipeRight(sender: AnyObject) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         habits = RealmHelper.retrieveHabits()

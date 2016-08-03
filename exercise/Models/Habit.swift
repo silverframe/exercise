@@ -108,31 +108,45 @@ class Habit: Object {
                 addReminder(time)
             }
         }
+        print(UIApplication.sharedApplication().scheduledLocalNotifications)
     }
     
     func turnReminderOff(){
         if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
             for tempNotification in tempArray {
-                if let identfier = tempNotification.userInfo!["uuid"] as? String {
-                    if identfier == uuid {
+                if let identifier = tempNotification.userInfo!["name"] as? String {
+                    if identifier == self.name! {
                         UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
+                        print(tempArray)
                     }
-                    
                 }
             }
         }
-        
     }
 }
 
 extension Habit {
     func addReminder(date: NSDate){
-        let calendar = NSCalendar.currentCalendar()
-        let type: NSCalendarUnit = [NSCalendarUnit.Weekday, NSCalendarUnit.Hour, NSCalendarUnit.Minute ]
-        let dateComponent = calendar.components(type, fromDate: date)
-        dateComponent.second = 0
-        let newDate = calendar.dateFromComponents(dateComponent)
-        let firedate = calendar.dateFromComponents(dateComponent)
+//        let calendar = NSCalendar.currentCalendar()
+//        let type: NSCalendarUnit = [NSCalendarUnit.Year , NSCalendarUnit.Month , NSCalendarUnit.Day , NSCalendarUnit.Hour , NSCalendarUnit.Minute , NSCalendarUnit.Second , NSCalendarUnit.Weekday]
+//        let dateComponent = calendar.components(type, fromDate: date)
+//        dateComponent.second = 0
+//        let newDate = calendar.dateFromComponents(dateComponent)
+//        let firedate = calendar.dateFromComponents(dateComponent)
+        
+        
+        //to get rid of all other notifications of the same name
+        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
+            for tempNotification in tempArray {
+                if let identifier = tempNotification.userInfo!["name"] as? String {
+                    if identifier == self.name! {
+                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
+                        print(tempArray)
+                    }
+                }
+            }
+        }
+
         
         let notification = UILocalNotification()
         notification.alertBody = name
@@ -140,9 +154,11 @@ extension Habit {
         notification.fireDate = date
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.timeZone = NSTimeZone.defaultTimeZone()
-        notification.userInfo = ["name": name, "UUID": uuid] 
+        notification.userInfo = ["name": name, "UUID": uuid]
+        notification.repeatInterval = .Day
         
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        print(notification.userInfo)
     }
 }
 

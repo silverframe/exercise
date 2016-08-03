@@ -24,12 +24,12 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
         if sender.on {
             reminderSwitch.on = true
             pickerVisible = true
-            habit?.turnReminderOn()
+//            habit?.turnReminderOn()
             
         } else {
             reminderSwitch.on = false
             pickerVisible = false
-            habit?.turnReminderOff()
+//            habit?.turnReminderOff()
         }
         
         tableView.reloadData()
@@ -180,7 +180,7 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
             if let habit = habit {
                 if (habitTextField.text!.isEmpty) {
                     showIncompleteFieldsAlerts()
-                }else {
+                } else {
                 let newHabit = Habit()
                 newHabit.name = habitTextField.text
                 if let reminder = newHabit.reminder {
@@ -208,11 +208,14 @@ class HabitEntryViewController: UITableViewController, UITextFieldDelegate {
                 reminder.reminderOn = reminderSwitch.on }
                 habit.weeklyTarget = Int(weeklyTargetSlider.value)
                 habit.week = habit.currentWeekValue()
-                    RealmHelper.addHabit(habit)
-                    if reminderSwitch.on {
-                        habit.turnReminderOn()} else
-                    {habit.turnReminderOff()
-                    }}
+                RealmHelper.addHabit(habit)
+                if reminderSwitch.on {
+                    habit.turnReminderOn()
+                } else{
+                    habit.turnReminderOff()
+                }
+                    
+                }
             }
             habitLogViewController.habits = RealmHelper.retrieveHabits()
         }
