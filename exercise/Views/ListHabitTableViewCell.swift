@@ -13,7 +13,7 @@ class ListHabitTableViewCell: UITableViewCell {
     
     var habit: Habit?
     
-
+    var delegate: ModalAlertDelegate?
     
 //    @IBOutlet weak var habitFrequencyLabel: UILabel!
 
@@ -22,6 +22,9 @@ class ListHabitTableViewCell: UITableViewCell {
     @IBOutlet weak var habitNameLabel: UILabel!
     
     @IBAction func habitFrequencyButtonClicked(sender: UIButton) {
+        
+        
+
         if let habit = habit {
             //Changes the no of total completions, current streak, frequency
             habit.frequencyChange()
@@ -43,12 +46,20 @@ class ListHabitTableViewCell: UITableViewCell {
                     self.habitNameLabel.alpha = 0.2
                     self.habitFrequencyButton.alpha = 0.8
                     }, completion: nil)
+                    if habit.totalCompletions == 1 {
+                    delegate?.showAlert("show modal alert")
+                    }
                 }
             }
-            
-            
         }
     }
 }
+
+protocol ModalAlertDelegate {
+    func showAlert(string:String)
+    
+}
+
+
 
 

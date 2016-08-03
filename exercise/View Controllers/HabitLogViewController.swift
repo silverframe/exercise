@@ -27,6 +27,7 @@ class HabitLogViewController: UITableViewController {
         let notification = NSNotificationCenter.defaultCenter()
         notification.addObserver(self, selector: #selector(self.reloadTable), name: "EnterForeground", object: nil)
         self.setNeedsStatusBarAppearanceUpdate()
+//        Alert().firstCompletion(self)
     }
     
     func reloadTable() {
@@ -56,6 +57,7 @@ class HabitLogViewController: UITableViewController {
         
         cell.habitNameLabel.text = habit.name
         
+        cell.delegate = self
     
         // Function to differentiate between a newly created habit(during the same session) and an existing one
         if habit.dateCompleted.count != 0 {
@@ -112,3 +114,15 @@ class HabitLogViewController: UITableViewController {
     
 
 }
+
+
+extension HabitLogViewController: ModalAlertDelegate{
+    func showAlert(string:String){
+            Alert().firstCompletion(self)
+    }
+}
+
+
+
+
+

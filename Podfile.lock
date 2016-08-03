@@ -2,6 +2,7 @@ PODS:
   - Alamofire (3.4.1)
   - CVCalendar (1.2.9)
   - FSCalendar (2.2.0)
+  - JSSAlertView (1.1.5)
   - JTCalendar (2.1.7)
   - Mixpanel (3.0.0):
     - Mixpanel/Mixpanel (= 3.0.0)
@@ -16,6 +17,7 @@ DEPENDENCIES:
   - Alamofire (~> 3.4)
   - CVCalendar (~> 1.2.9)
   - FSCalendar
+  - JSSAlertView
   - JTCalendar (~> 2.0)
   - Mixpanel
   - RealmSwift
@@ -24,11 +26,12 @@ SPEC CHECKSUMS:
   Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   CVCalendar: 0799256e0bc3b43e83b7e86c0729ce9ff0624cb6
   FSCalendar: 766367b91bcf2829c492c5ac50a58652c6df4ee8
+  JSSAlertView: 1ff5d4dcb28b00a38c0293c4c555231c02590be1
   JTCalendar: bc7f3086a4df02aa2e02ac4d505ef888cc2283a0
   Mixpanel: ac92056ee35a961362513ba11049e67cffcaa1f1
   Realm: 2e15e39d35b08abb529e212ed5d8af107b5236c8
   RealmSwift: d73ea2af08c3676dbdd5e4b669651a0f492162a4
 
-PODFILE CHECKSUM: ec968583fbb9ee9ee103469a7a00f78b776f289c
+PODFILE CHECKSUM: f2f2de9ce26bfd4b4daefc67df7624c9c24a5b56
 
 COCOAPODS: 1.0.1

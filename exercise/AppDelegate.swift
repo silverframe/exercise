@@ -79,29 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-//    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow) -> Int {
-//        
-//        return checkOrientation(self.window?)// This is the custom function that u need to set your custom view to each orientation which u want to lock
-//        
-//    }
-//    
-//    func checkOrientation(viewController:UIViewController?)-> Int{
-//        
-//        if(viewController == nil){
-//            
-//            return Int(UIInterfaceOrientationMask.All.rawValue)//All means all orientation
-//            
-//        }else if (viewController is CalendarProgressViewController){
-//            
-//            return Int(UIInterfaceOrientationMask.Portrait.rawValue)
-//            
-//        }else{
-//            
-//            return checkOrientation(viewController!.presentedViewController?)
-//        }
-//    }
-
 
 }
 

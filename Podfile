@@ -12,5 +12,6 @@ target 'exercise' do
   pod 'CVCalendar', '~> 1.2.9'
   pod 'FSCalendar'
   pod 'Mixpanel'
+  pod 'JSSAlertView'
 
 end

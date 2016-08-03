@@ -8,6 +8,7 @@
 
 import Foundation
 import RealmSwift
+import JSSAlertView
 
 class Habit: Object {
     dynamic var name: String!
@@ -91,7 +92,6 @@ class Habit: Object {
             }
             let date = Date()
             dateCompleted.insert(date, atIndex: 0)
-            
         }
     }
     
@@ -160,7 +160,22 @@ extension Habit {
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
         print(notification.userInfo)
     }
+    
+    func checkStreak(viewController: UIViewController){
+        if currentStreak == 1 {
+        let streakAlert = JSSAlertView().show(
+            viewController,
+            title: "Congrats",
+            text: "Wow! You have reached a \(habit?.currentStreak) day streak",
+            buttonText: "OK",
+            color: UIColorFromHex(0x14CDB6, alpha: 1)
+        )
+        streakAlert.setTextTheme(.Light)
+        }
+    }
 }
+
+
 
 
 
