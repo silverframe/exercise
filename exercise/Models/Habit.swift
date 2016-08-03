@@ -135,7 +135,7 @@ extension Habit {
 //        let firedate = calendar.dateFromComponents(dateComponent)
         
         
-        //to get rid of all other notifications of the same name
+        //to clear all other notifications of the same name
         if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
             for tempNotification in tempArray {
                 if let identifier = tempNotification.userInfo!["name"] as? String {
@@ -146,8 +146,8 @@ extension Habit {
                 }
             }
         }
-
         
+        //creating the notification
         let notification = UILocalNotification()
         notification.alertBody = name
         notification.alertAction = "open"

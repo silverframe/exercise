@@ -599,7 +599,7 @@
                                 <rect key="frame" x="0.0" y="64" width="600" height="182"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-qV-WLS">
-                                        <rect key="frame" x="530" y="6" width="50" height="170"/>
+                                        <rect key="frame" x="540" y="6" width="50" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPt-QM-7ho">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
@@ -653,7 +653,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YJS-9C-ayw">
-                                        <rect key="frame" x="20" y="6" width="139" height="170"/>
+                                        <rect key="frame" x="43" y="8" width="139" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6i-kp-9d3">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="35"/>
@@ -703,17 +703,71 @@
                                             <constraint firstAttribute="trailing" secondItem="eUR-Ha-BDY" secondAttribute="trailing" id="Ry0-Zg-akW"/>
                                             <constraint firstItem="eUR-Ha-BDY" firstAttribute="width" secondItem="n6i-kp-9d3" secondAttribute="width" id="Trm-SJ-lut"/>
                                             <constraint firstItem="eUR-Ha-BDY" firstAttribute="leading" secondItem="YJS-9C-ayw" secondAttribute="leading" id="Vjo-NH-BUn"/>
+                                            <constraint firstAttribute="height" constant="170" id="ntv-c9-7Pt"/>
                                             <constraint firstItem="TKn-if-3hK" firstAttribute="height" secondItem="n6i-kp-9d3" secondAttribute="height" id="ols-1w-LeA"/>
                                         </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-w1-xFQ">
+                                        <rect key="frame" x="15" y="8" width="30" height="170"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-is-uOc">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="sfn-UU-MkV"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Check"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAN-EI-JB0">
+                                                <rect key="frame" x="0.0" y="45" width="30" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="0Yd-HB-Gnv"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Check"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skZ-2J-ifX">
+                                                <rect key="frame" x="0.0" y="90" width="30" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="I08-MB-6CG"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Check"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8h-YL-SYp">
+                                                <rect key="frame" x="0.0" y="135" width="30" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="tvP-NU-yZz"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="Check"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="zdU-is-uOc" firstAttribute="centerY" secondItem="8EL-w1-xFQ" secondAttribute="centerY" id="JAE-eF-Nlf"/>
+                                            <constraint firstAttribute="width" constant="30" id="OcW-6t-ShZ"/>
+                                            <constraint firstItem="zdU-is-uOc" firstAttribute="centerX" secondItem="8EL-w1-xFQ" secondAttribute="centerX" id="Off-A5-rt2"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="JAE-eF-Nlf"/>
+                                            </mask>
+                                        </variation>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="VYC-jh-S0z" secondAttribute="leading" constant="20" id="4CD-MY-gFY"/>
-                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" id="CdH-kU-Je5"/>
+                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" constant="2" id="CdH-kU-Je5"/>
+                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="8EL-w1-xFQ" secondAttribute="trailing" constant="-2" id="DGv-B0-DiG"/>
+                                    <constraint firstItem="8EL-w1-xFQ" firstAttribute="leading" secondItem="VYC-jh-S0z" secondAttribute="leading" constant="15" id="JLv-va-Kup"/>
                                     <constraint firstItem="pWd-qV-WLS" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" id="p7F-jF-50W"/>
-                                    <constraint firstAttribute="trailing" secondItem="pWd-qV-WLS" secondAttribute="trailing" constant="20" id="tQ6-xU-cCm"/>
+                                    <constraint firstAttribute="trailing" secondItem="pWd-qV-WLS" secondAttribute="trailing" constant="10" id="tQ6-xU-cCm"/>
+                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="top" secondItem="8EL-w1-xFQ" secondAttribute="top" id="v8K-fy-MZ3"/>
+                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="8EL-w1-xFQ" secondAttribute="trailing" constant="48" id="yWS-9Q-h4h"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4CD-MY-gFY"/>
+                                        <exclude reference="yWS-9Q-h4h"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb">
                                 <rect key="frame" x="0.0" y="246" width="600" height="310"/>
@@ -830,6 +884,7 @@
     <resources>
         <image name="Button" width="34" height="34"/>
         <image name="Button Selected" width="34" height="34"/>
+        <image name="Check" width="24" height="24"/>
         <image name="Checkbox" width="25" height="25"/>
         <image name="Filled Checkbox" width="25" height="25"/>
         <image name="Green Arrow1" width="13" height="18"/>
