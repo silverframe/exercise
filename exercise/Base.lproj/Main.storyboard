@@ -836,8 +836,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="calendarHeightContraint" destination="LhB-pc-Czb" id="wf1-hM-Z7m"/>
-                        <outlet property="calendarView1" destination="LhB-pc-Czb" id="ZA7-La-29i"/>
+                        <outlet property="calendarHeightConstraints" destination="Lhl-Nd-q1N" id="wg4-nd-RNf"/>
+                        <outlet property="calendarView" destination="LhB-pc-Czb" id="ln3-bc-Pbn"/>
                         <outlet property="currentStreakNo" destination="EPt-QM-7ho" id="wIm-Em-XtJ"/>
                         <outlet property="longestStreakNo" destination="ERP-QT-dDV" id="t9y-4x-HKJ"/>
                         <outlet property="totalCompletionsNo" destination="xdF-DP-ffB" id="bVH-zZ-EN3"/>
