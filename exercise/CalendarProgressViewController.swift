@@ -19,25 +19,18 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     var date = NSDate()
     var today = NSDate()
 
-
-    @IBOutlet weak var calendarView1: UIView!
-    @IBOutlet weak var calendarHeightContraint: NSLayoutConstraint!
+    @IBOutlet weak var calendarView: FSCalendar!
+    @IBOutlet weak var calendarHeightConstraints: NSLayoutConstraint!
     
     @IBOutlet weak var weeklyTargetNo: UILabel!
     @IBOutlet weak var totalCompletionsNo: UILabel!
     @IBOutlet weak var longestStreakNo: UILabel!
     @IBOutlet weak var currentStreakNo: UILabel!
     
-    var calendarView: FSCalendar!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //Creating the calendar and customizing its appearance
-        calendarView = FSCalendar()
-        calendarView1.addSubview(calendarView)
-        calendarView.frame = CGRect(x: 0, y: 0, width: 320, height: 300)
         calendarView.delegate = self
         calendarView.dataSource = self
         
@@ -110,6 +103,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     
     func calendar(calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendarView.frame = CGRect(origin: calendarView.frame.origin, size: bounds.size)
+//        calendarHeightConstraints.constant = bounds.height
+//        view.layoutIfNeeded()
     }
     
 

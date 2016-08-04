@@ -763,7 +763,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb" customClass="FSCalendar">
                                 <rect key="frame" x="0.0" y="246" width="600" height="310"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="0.49614762931034484" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -776,47 +776,11 @@
                             <constraint firstItem="VYC-jh-S0z" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="9Cb-RK-Fbb"/>
                             <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="FpC-gF-F2t"/>
                             <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="GiL-o2-VE8"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="NCy-X1-68h"/>
-                            <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="SRd-zF-3Cx"/>
                             <constraint firstAttribute="trailing" secondItem="LhB-pc-Czb" secondAttribute="trailing" id="T8N-OV-VYQ"/>
-                            <constraint firstItem="VYC-jh-S0z" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="VEe-Vq-3GO"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="JSh-1R-cEp" secondAttribute="top" constant="240" id="WJ6-4d-ROh"/>
                             <constraint firstItem="VYC-jh-S0z" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="WNc-Ja-dNN"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="JSh-1R-cEp" secondAttribute="top" constant="240" id="YuV-FB-x2p"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="ZZl-Vj-i9N"/>
-                            <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="Zft-mj-S43"/>
-                            <constraint firstItem="VYC-jh-S0z" firstAttribute="top" secondItem="MM4-25-WSW" secondAttribute="bottom" id="aaL-Kr-IRo"/>
                             <constraint firstItem="LhB-pc-Czb" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="d1D-E3-Bji"/>
-                            <constraint firstItem="QfD-ZI-WUp" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="hGr-x9-Bem"/>
-                            <constraint firstAttribute="trailing" secondItem="VYC-jh-S0z" secondAttribute="trailing" id="hQf-zZ-ZW7"/>
-                            <constraint firstItem="VYC-jh-S0z" firstAttribute="top" secondItem="LhB-pc-Czb" secondAttribute="bottom" id="koz-Zf-Oth"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="nH7-yk-bap"/>
-                            <constraint firstAttribute="trailing" secondItem="LhB-pc-Czb" secondAttribute="trailing" id="nuj-o4-De7"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="pv7-8y-Xe3"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="leading" secondItem="JSh-1R-cEp" secondAttribute="leading" id="sLx-dm-Tiq"/>
-                            <constraint firstItem="LhB-pc-Czb" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="bottom" id="ucd-uI-bw5"/>
                             <constraint firstAttribute="trailing" secondItem="VYC-jh-S0z" secondAttribute="trailing" id="wDl-Rn-epK"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="VEe-Vq-3GO"/>
-                                <exclude reference="aaL-Kr-IRo"/>
-                                <exclude reference="hQf-zZ-ZW7"/>
-                                <exclude reference="koz-Zf-Oth"/>
-                                <exclude reference="NCy-X1-68h"/>
-                                <exclude reference="WJ6-4d-ROh"/>
-                                <exclude reference="YuV-FB-x2p"/>
-                                <exclude reference="ZZl-Vj-i9N"/>
-                                <exclude reference="nH7-yk-bap"/>
-                                <exclude reference="nuj-o4-De7"/>
-                                <exclude reference="pv7-8y-Xe3"/>
-                                <exclude reference="sLx-dm-Tiq"/>
-                                <exclude reference="ucd-uI-bw5"/>
-                                <exclude reference="SRd-zF-3Cx"/>
-                                <exclude reference="Zft-mj-S43"/>
-                                <exclude reference="hGr-x9-Bem"/>
-                            </mask>
-                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Calendar Progress" id="poJ-2v-10I">
@@ -836,8 +800,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="calendarHeightContraint" destination="LhB-pc-Czb" id="wf1-hM-Z7m"/>
-                        <outlet property="calendarView1" destination="LhB-pc-Czb" id="ZA7-La-29i"/>
+                        <outlet property="calendarHeightConstraints" destination="Lhl-Nd-q1N" id="wg4-nd-RNf"/>
+                        <outlet property="calendarView" destination="LhB-pc-Czb" id="ln3-bc-Pbn"/>
                         <outlet property="currentStreakNo" destination="EPt-QM-7ho" id="wIm-Em-XtJ"/>
                         <outlet property="longestStreakNo" destination="ERP-QT-dDV" id="t9y-4x-HKJ"/>
                         <outlet property="totalCompletionsNo" destination="xdF-DP-ffB" id="bVH-zZ-EN3"/>

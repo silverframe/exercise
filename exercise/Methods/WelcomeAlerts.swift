@@ -33,8 +33,8 @@ struct WelcomeAlerts {
     static func firstHabitAlert(viewController: HabitLogViewController) {
         if !NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce") && viewController.habits.count == 1 {
             let firstHabitAlert = JSSAlertView().show(viewController,
-                                                           title: "Form good habits!",
-                                                           text: "Tap on the checkbox when you have completed the habit and then select the row to check on your progress",
+                                                           title: "Get Started",
+                                                           text: "Tap on the checkbox once you have completed the habit and select the row to check on your progress",
                                                            buttonText: "OK",
                                                            color: UIColor(red: 248.0/255.0, green: 202.0/255.0, blue: 0.0/255.0, alpha: 1.0))
 
