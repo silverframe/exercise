@@ -118,7 +118,7 @@ class HabitLogViewController: UITableViewController {
 
 extension HabitLogViewController: ModalAlertDelegate{
     func showAlert(string:String){
-            Alert().streakCompletions(self)
+//            Alert().streakCompletions(self)
     }
 }
 
