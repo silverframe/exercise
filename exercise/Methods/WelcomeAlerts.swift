@@ -46,3 +46,8 @@ struct WelcomeAlerts {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
     }
 }
+
+
+func secondAlert(viewController: HabitLogViewController) {
+    WelcomeAlerts.welcomeAlert2(viewController)
+}

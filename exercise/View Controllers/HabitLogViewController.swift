@@ -28,7 +28,6 @@ class HabitLogViewController: UITableViewController {
         notification.addObserver(self, selector: #selector(self.reloadTable), name: "EnterForeground", object: nil)
         self.setNeedsStatusBarAppearanceUpdate()
         WelcomeAlerts.welcomeAlert1(self)
-        WelcomeAlerts.welcomeAlert2(self)
     }
     
     func reloadTable() {
@@ -36,7 +35,6 @@ class HabitLogViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        WelcomeAlerts.firstHabitAlert(self)
         
     }
     

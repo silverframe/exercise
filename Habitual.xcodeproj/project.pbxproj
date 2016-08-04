@@ -207,7 +207,7 @@
 				TargetAttributes = {
 					CB3534DB1D3F719E005FD442 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = CMEKUPA8BG;
+						DevelopmentTeam = K324535MTM;
 					};
 				};
 			};
@@ -428,7 +428,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = exercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sseah.habitual;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scy.habitual;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -444,7 +444,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = exercise/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sseah.habitual;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scy.habitual;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
