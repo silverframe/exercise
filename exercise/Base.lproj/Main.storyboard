@@ -248,40 +248,16 @@
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="zaX-ix-XFn" secondAttribute="trailing" constant="21" id="0xw-aw-K4m"/>
-                                                <constraint firstItem="Nwe-3y-CJI" firstAttribute="leading" secondItem="zaX-ix-XFn" secondAttribute="trailing" constant="5" id="6H2-R9-F2e"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Nwe-3y-CJI" secondAttribute="bottom" constant="1" id="7Ou-R4-huo"/>
                                                 <constraint firstItem="Nwe-3y-CJI" firstAttribute="centerY" secondItem="dPI-gg-dVF" secondAttribute="centerY" id="8KS-PU-SiN"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zaX-ix-XFn" secondAttribute="trailing" constant="73" id="Dcf-dR-pSj"/>
-                                                <constraint firstItem="Nwe-3y-CJI" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="topMargin" constant="1" id="FAm-7C-523"/>
                                                 <constraint firstItem="zaX-ix-XFn" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="top" constant="1" id="G6S-Nb-L4t"/>
                                                 <constraint firstItem="ZCw-D2-Mfa" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="top" constant="3" id="QIC-YD-O90"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nwe-3y-CJI" secondAttribute="bottom" constant="1" id="TPx-Fd-6ye"/>
                                                 <constraint firstAttribute="trailing" secondItem="Nwe-3y-CJI" secondAttribute="trailing" constant="21" id="eq6-PK-63H"/>
-                                                <constraint firstItem="Nwe-3y-CJI" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="topMargin" constant="1" id="kSC-7d-qLC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Nwe-3y-CJI" secondAttribute="trailing" constant="21" id="lHJ-TD-7Y5"/>
                                                 <constraint firstItem="zaX-ix-XFn" firstAttribute="centerY" secondItem="dPI-gg-dVF" secondAttribute="centerY" id="lMb-hO-f4Q"/>
-                                                <constraint firstAttribute="trailing" secondItem="Nwe-3y-CJI" secondAttribute="trailing" constant="21" id="q4D-PT-buR"/>
-                                                <constraint firstAttribute="bottom" secondItem="Nwe-3y-CJI" secondAttribute="bottom" constant="1" id="s22-HQ-0rd"/>
-                                                <constraint firstItem="Nwe-3y-CJI" firstAttribute="top" secondItem="dPI-gg-dVF" secondAttribute="top" constant="1" id="sk2-hp-Ufj"/>
                                                 <constraint firstAttribute="bottom" secondItem="zaX-ix-XFn" secondAttribute="bottom" constant="1" id="xEQ-bY-8Vc"/>
                                                 <constraint firstItem="ZCw-D2-Mfa" firstAttribute="leading" secondItem="dPI-gg-dVF" secondAttribute="leading" constant="15" id="xly-ge-Ub0"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZCw-D2-Mfa" secondAttribute="bottom" constant="2" id="y2F-Gc-azo"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="0xw-aw-K4m"/>
-                                                    <exclude reference="6H2-R9-F2e"/>
-                                                    <exclude reference="7Ou-R4-huo"/>
-                                                    <exclude reference="FAm-7C-523"/>
-                                                    <exclude reference="TPx-Fd-6ye"/>
-                                                    <exclude reference="kSC-7d-qLC"/>
-                                                    <exclude reference="lHJ-TD-7Y5"/>
-                                                    <exclude reference="q4D-PT-buR"/>
-                                                    <exclude reference="s22-HQ-0rd"/>
-                                                    <exclude reference="sk2-hp-Ufj"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="165" id="gAp-Ef-c2c">
@@ -341,31 +317,15 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="2KI-oa-UsT" firstAttribute="leading" secondItem="5l0-qB-MOt" secondAttribute="leadingMargin" constant="8" id="1gb-AP-seu"/>
-                                                <constraint firstAttribute="trailing" secondItem="cmf-Rk-RJY" secondAttribute="trailing" constant="18" id="2KO-3N-0oH"/>
                                                 <constraint firstItem="2KI-oa-UsT" firstAttribute="top" secondItem="5l0-qB-MOt" secondAttribute="top" constant="3" id="3Td-rk-tDi"/>
                                                 <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="2KI-oa-UsT" secondAttribute="bottom" constant="2" id="IWH-s4-UDx"/>
                                                 <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="cmf-Rk-RJY" secondAttribute="bottom" id="IXO-3H-YCv"/>
                                                 <constraint firstAttribute="trailing" secondItem="cmf-Rk-RJY" secondAttribute="trailing" constant="30" id="MbS-IO-Z3h"/>
-                                                <constraint firstItem="cmf-Rk-RJY" firstAttribute="top" secondItem="5l0-qB-MOt" secondAttribute="top" constant="3" id="N2W-Zp-S7n"/>
                                                 <constraint firstAttribute="trailing" secondItem="c9y-Pp-8hp" secondAttribute="trailing" constant="30" id="TTk-bz-lQB"/>
                                                 <constraint firstAttribute="bottom" secondItem="c9y-Pp-8hp" secondAttribute="bottom" constant="5" id="baF-7L-COe"/>
                                                 <constraint firstItem="c9y-Pp-8hp" firstAttribute="leading" secondItem="5l0-qB-MOt" secondAttribute="leading" constant="20" id="dUf-KS-hTs"/>
-                                                <constraint firstItem="cmf-Rk-RJY" firstAttribute="top" secondItem="5l0-qB-MOt" secondAttribute="top" constant="2" id="doQ-1i-iia"/>
-                                                <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="cmf-Rk-RJY" secondAttribute="bottom" constant="5" id="mag-iS-MvP"/>
-                                                <constraint firstAttribute="trailing" secondItem="cmf-Rk-RJY" secondAttribute="trailing" constant="15" id="oF4-Nk-8op"/>
                                                 <constraint firstItem="cmf-Rk-RJY" firstAttribute="top" secondItem="5l0-qB-MOt" secondAttribute="top" constant="11" id="oKB-KF-IWB"/>
-                                                <constraint firstItem="c9y-Pp-8hp" firstAttribute="top" secondItem="cmf-Rk-RJY" secondAttribute="bottom" constant="5" id="ti4-yt-Fxz"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="mag-iS-MvP"/>
-                                                    <exclude reference="ti4-yt-Fxz"/>
-                                                    <exclude reference="2KO-3N-0oH"/>
-                                                    <exclude reference="N2W-Zp-S7n"/>
-                                                    <exclude reference="doQ-1i-iia"/>
-                                                    <exclude reference="oF4-Nk-8op"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="j3k-uC-Y9B">
