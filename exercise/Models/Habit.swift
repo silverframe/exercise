@@ -161,6 +161,19 @@ extension Habit {
         print(notification.userInfo)
     }
     
+    func deleteNotificationsforHabit(){
+        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
+            for tempNotification in tempArray {
+                if let identifier = tempNotification.userInfo!["UUID"] as? String {
+                    if identifier == self.uuid {
+                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
+                        print(tempArray)
+                    }
+                }
+            }
+        }
+    }
+    
     func checkStreak(viewController: UIViewController){
         if currentStreak == 1 {
         let streakAlert = JSSAlertView().show(
