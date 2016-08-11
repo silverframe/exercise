@@ -10,20 +10,20 @@
         <scene sceneID="yJs-YD-7SM">
             <objects>
                 <tableViewController id="dsb-nl-Jkh" customClass="HabitLogViewController" customModule="exercise" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Kf-K2-sGJ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Kf-K2-sGJ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="listHabitTableViewCell" id="qY6-wC-fsk" customClass="ListHabitTableViewCell" customModule="exercise" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="53"/>
+                                <rect key="frame" x="0.0" y="92" width="600" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qY6-wC-fsk" id="TbP-1k-XBL">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="52.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
-                                            <rect key="frame" x="10" y="14" width="25" height="25"/>
+                                            <rect key="frame" x="10" y="12" width="25" height="25"/>
                                             <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton" label="done"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="31" id="8RD-wD-qTm"/>
@@ -52,7 +52,7 @@
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
-                                            <rect key="frame" x="45" y="16" width="200" height="20"/>
+                                            <rect key="frame" x="45" y="15" width="200" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="lfG-pz-jup"/>
                                             </constraints>
@@ -61,7 +61,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KZ-b1-899">
-                                            <rect key="frame" x="571" y="17.5" width="9" height="15"/>
+                                            <rect key="frame" x="571" y="16" width="9" height="15"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="15" id="JZA-1l-BjZ"/>
                                                 <constraint firstAttribute="width" constant="9" id="MSv-Gl-zJk"/>
@@ -807,6 +807,6 @@
         <image name="Green Arrow1" width="13" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4dB-tL-sVl"/>
+        <segue reference="lXI-HI-57H"/>
     </inferredMetricsTieBreakers>
 </document>
