@@ -20,7 +20,9 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     var today = NSDate()
 
     @IBOutlet weak var calendarView: FSCalendar!
-    @IBOutlet weak var calendarHeightConstraints: NSLayoutConstraint!
+    
+    @IBOutlet weak var calendarHeightContraints: NSLayoutConstraint!
+    
     
     @IBOutlet weak var weeklyTargetNo: UILabel!
     @IBOutlet weak var totalCompletionsNo: UILabel!
@@ -43,6 +45,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView.appearance.headerTitleColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
         calendarView.appearance.weekdayTextColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
         calendarView.appearance.selectionColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.appearance.adjustsFontSizeToFitContentSize = true
+        calendarView.appearance.weekdayTextSize = 30.0
         
         // Prevents the calendar from being selected by the user 
         if let habit = habit {
@@ -103,8 +107,9 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
     
     func calendar(calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
         calendarView.frame = CGRect(origin: calendarView.frame.origin, size: bounds.size)
-//        calendarHeightConstraints.constant = bounds.height
-//        view.layoutIfNeeded()
+//        let screenSize: CGRect = UIScreen.mainScreen().bounds
+//        calendarHeightContraints.constant = screenSize.height * 0.5
+        view.layoutIfNeeded()
     }
     
 

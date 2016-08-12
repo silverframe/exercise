@@ -11,6 +11,7 @@
 		CB1584EA1D41E89000D6D6BB /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1584E91D41E89000D6D6BB /* RealmHelper.swift */; };
 		CB1584EC1D41EB7200D6D6BB /* HabitLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */; };
 		CB1584EF1D41EF4600D6D6BB /* ListHabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1584EE1D41EF4600D6D6BB /* ListHabitTableViewCell.swift */; };
+		CB179E1B1D5DB276007DC616 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB179E1A1D5DB276007DC616 /* PageContentViewController.swift */; };
 		CB3534E01D3F719E005FD442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534DF1D3F719E005FD442 /* AppDelegate.swift */; };
 		CB3534E51D3F719E005FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3534E31D3F719E005FD442 /* Main.storyboard */; };
 		CB3534E71D3F719E005FD442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3534E61D3F719E005FD442 /* Assets.xcassets */; };
@@ -20,7 +21,6 @@
 		CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534FB1D40AEA1005FD442 /* Date.swift */; };
 		CB5134301D51F7760010779B /* WelcomeAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB51342F1D51F7760010779B /* WelcomeAlerts.swift */; };
 		CB6255921D51CCC800C41E26 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6255911D51CCC800C41E26 /* Alerts.swift */; };
-		CB6255941D51D52900C41E26 /* FirstAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6255931D51D52900C41E26 /* FirstAlerts.swift */; };
 		CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */; };
 		CB73CBB81D47C79200AA1076 /* Reset.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBB71D47C79200AA1076 /* Reset.swift */; };
 		CB73CBBD1D4AF07200AA1076 /* ButtonRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */; };
@@ -35,6 +35,7 @@
 		CB1584E91D41E89000D6D6BB /* RealmHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
 		CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitLogViewController.swift; sourceTree = "<group>"; };
 		CB1584EE1D41EF4600D6D6BB /* ListHabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHabitTableViewCell.swift; sourceTree = "<group>"; };
+		CB179E1A1D5DB276007DC616 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
 		CB3534DC1D3F719E005FD442 /* exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3534DF1D3F719E005FD442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3534E41D3F719E005FD442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		CB51342F1D51F7760010779B /* WelcomeAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeAlerts.swift; sourceTree = "<group>"; };
 		CB5134511D5256560010779B /* Exercise-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Exercise-Bridging-Header.h"; sourceTree = "<group>"; };
 		CB6255911D51CCC800C41E26 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
-		CB6255931D51D52900C41E26 /* FirstAlerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstAlerts.swift; sourceTree = "<group>"; };
 		CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTargetViewController.swift; sourceTree = "<group>"; };
 		CB73CBB71D47C79200AA1076 /* Reset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reset.swift; path = ../Reset.swift; sourceTree = "<group>"; };
 		CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonRefresh.swift; sourceTree = "<group>"; };
@@ -138,6 +138,7 @@
 				CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */,
 				CB73CBB31D4454D000AA1076 /* WeeklyTargetViewController.swift */,
 				CB73CBC21D4AFA1200AA1076 /* EditReminderViewController.swift */,
+				CB179E1A1D5DB276007DC616 /* PageContentViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -158,7 +159,6 @@
 				CB73CBB71D47C79200AA1076 /* Reset.swift */,
 				CB73CBBC1D4AF07200AA1076 /* ButtonRefresh.swift */,
 				CB6255911D51CCC800C41E26 /* Alerts.swift */,
-				CB6255931D51D52900C41E26 /* FirstAlerts.swift */,
 				CB51342F1D51F7760010779B /* WelcomeAlerts.swift */,
 			);
 			path = Methods;
@@ -299,10 +299,10 @@
 				CB1584EA1D41E89000D6D6BB /* RealmHelper.swift in Sources */,
 				CB3534E01D3F719E005FD442 /* AppDelegate.swift in Sources */,
 				CB73CBBF1D4AF55400AA1076 /* Reminder.swift in Sources */,
+				CB179E1B1D5DB276007DC616 /* PageContentViewController.swift in Sources */,
 				CB73CBBD1D4AF07200AA1076 /* ButtonRefresh.swift in Sources */,
 				CB5134301D51F7760010779B /* WelcomeAlerts.swift in Sources */,
 				CB73CBC31D4AFA1200AA1076 /* EditReminderViewController.swift in Sources */,
-				CB6255941D51D52900C41E26 /* FirstAlerts.swift in Sources */,
 				CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */,
 				CB3534FC1D40AEA1005FD442 /* Date.swift in Sources */,
 				CB1584EC1D41EB7200D6D6BB /* HabitLogViewController.swift in Sources */,

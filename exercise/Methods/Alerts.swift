@@ -34,14 +34,14 @@ struct Alert {
         firstHabitAlert.setTextTheme(.Light)
     }
     
-    func streakCompletions(viewController: HabitLogViewController){
-        let streakAlert = JSSAlertView().show(
-            viewController,
-            title: "Congrats",
-            text: "Wow! You have reached a \(habit?.currentStreak) day streak",
-            buttonText: "OK",
-            color: UIColorFromHex(0x14CDB6, alpha: 1)
-        )
-        streakAlert.setTextTheme(.Light)
-    }
+//    func streakCompletions(viewController: HabitLogViewController){
+//        let streakAlert = JSSAlertView().show(
+//            viewController,
+//            title: "Congrats",
+//            text: "Wow! You have reached a \(habit?.currentStreak) day streak",
+//            buttonText: "OK",
+//            color: UIColorFromHex(0x14CDB6, alpha: 1)
+//        )
+//        streakAlert.setTextTheme(.Light)
+//    }
 }

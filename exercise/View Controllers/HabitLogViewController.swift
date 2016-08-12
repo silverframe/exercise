@@ -35,6 +35,7 @@ class HabitLogViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        WelcomeAlerts.firstHabitAlert(self)
         
     }
     

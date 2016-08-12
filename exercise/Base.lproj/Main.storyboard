@@ -6,6 +6,47 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="GGd-bb-WPe">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ugu-11-Gqy" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWd-Eo-fEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-596" y="-364"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="ipY-Oa-8xs">
+            <objects>
+                <viewController storyboardIdentifier="LaunchScreenPage" id="snN-1R-NCf" customClass="PageContentViewController" customModule="exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Efv-Ph-WQJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="HVt-wb-zs2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p0e-Zn-ACt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-6m-CYA">
+                                <rect key="frame" x="279" y="47" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OkP-HO-sVg">
+                                <rect key="frame" x="19" y="88" width="562" height="492"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="pageImage" destination="OkP-HO-sVg" id="Esf-BP-PUW"/>
+                        <outlet property="pageTitle" destination="EeV-6m-CYA" id="Eki-AO-w42"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4yb-zB-2ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="84" y="-364"/>
+        </scene>
         <!--Habits-->
         <scene sceneID="yJs-YD-7SM">
             <objects>
@@ -550,10 +591,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VYC-jh-S0z" userLabel="Top view">
-                                <rect key="frame" x="0.0" y="64" width="600" height="182"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="192"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pWd-qV-WLS">
-                                        <rect key="frame" x="540" y="6" width="50" height="170"/>
+                                        <rect key="frame" x="540" y="11" width="50" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPt-QM-7ho">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="35"/>
@@ -607,7 +648,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YJS-9C-ayw">
-                                        <rect key="frame" x="43" y="8" width="139" height="170"/>
+                                        <rect key="frame" x="43" y="13" width="139" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6i-kp-9d3">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="35"/>
@@ -662,7 +703,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-w1-xFQ">
-                                        <rect key="frame" x="15" y="8" width="30" height="170"/>
+                                        <rect key="frame" x="15" y="13" width="30" height="170"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-is-uOc">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="35"/>
@@ -707,28 +748,18 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="VYC-jh-S0z" secondAttribute="leading" constant="20" id="4CD-MY-gFY"/>
+                                    <constraint firstItem="pWd-qV-WLS" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="top" constant="11" id="B7Y-3L-JcZ"/>
                                     <constraint firstItem="YJS-9C-ayw" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" constant="2" id="CdH-kU-Je5"/>
                                     <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="8EL-w1-xFQ" secondAttribute="trailing" constant="-2" id="DGv-B0-DiG"/>
                                     <constraint firstItem="8EL-w1-xFQ" firstAttribute="leading" secondItem="VYC-jh-S0z" secondAttribute="leading" constant="15" id="JLv-va-Kup"/>
                                     <constraint firstItem="pWd-qV-WLS" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" id="p7F-jF-50W"/>
                                     <constraint firstAttribute="trailing" secondItem="pWd-qV-WLS" secondAttribute="trailing" constant="10" id="tQ6-xU-cCm"/>
                                     <constraint firstItem="YJS-9C-ayw" firstAttribute="top" secondItem="8EL-w1-xFQ" secondAttribute="top" id="v8K-fy-MZ3"/>
-                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="8EL-w1-xFQ" secondAttribute="trailing" constant="48" id="yWS-9Q-h4h"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="4CD-MY-gFY"/>
-                                        <exclude reference="yWS-9Q-h4h"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LhB-pc-Czb" customClass="FSCalendar">
-                                <rect key="frame" x="0.0" y="246" width="600" height="310"/>
+                                <rect key="frame" x="0.0" y="256" width="600" height="300"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.8666666666666667" blue="0.8666666666666667" alpha="0.49614762931034484" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="310" id="Lhl-Nd-q1N"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -760,7 +791,6 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="calendarHeightConstraints" destination="Lhl-Nd-q1N" id="wg4-nd-RNf"/>
                         <outlet property="calendarView" destination="LhB-pc-Czb" id="ln3-bc-Pbn"/>
                         <outlet property="currentStreakNo" destination="EPt-QM-7ho" id="wIm-Em-XtJ"/>
                         <outlet property="longestStreakNo" destination="ERP-QT-dDV" id="t9y-4x-HKJ"/>
@@ -807,6 +837,6 @@
         <image name="Green Arrow1" width="13" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lXI-HI-57H"/>
+        <segue reference="4dB-tL-sVl"/>
     </inferredMetricsTieBreakers>
 </document>

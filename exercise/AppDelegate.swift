@@ -47,6 +47,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //registering local notifications 
         application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil))
         
+        //settings for page view controller 
+        var pageController = UIPageControl.appearance()
+        pageController.pageIndicatorTintColor = UIColor.lightGrayColor()
+        pageController.currentPageIndicatorTintColor = UIColor.blueColor()
+        pageController.backgroundColor = UIColor.whiteColor()
+        
         
         return true
     }
