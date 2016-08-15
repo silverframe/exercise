@@ -44,6 +44,8 @@ class Habit: Object {
     
     dynamic var uuid = NSUUID().UUIDString
     
+    let notificationArray = List<HabitIdentifier>()
+    
     let dateCompleted = List<Date>()
     
     dynamic var reminder: Reminder? = Reminder()
@@ -55,6 +57,9 @@ class Habit: Object {
         creationDate = date
     }
     
+    override static func primaryKey() -> String? {
+        return "uuid"
+    }
     
     func frequencyChange(){
         if weekFrequency == 1 && addToStreak == true {
@@ -108,7 +113,7 @@ class Habit: Object {
                 addReminder(time)
             }
         }
-        print(UIApplication.sharedApplication().scheduledLocalNotifications)
+//        print(UIApplication.sharedApplication().scheduledLocalNotifications)
     }
     
     func turnReminderOff(){
@@ -138,8 +143,8 @@ extension Habit {
         //to clear all other notifications of the same name
         if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
             for tempNotification in tempArray {
-                if let identifier = tempNotification.userInfo!["name"] as? String {
-                    if identifier == self.name! {
+                if let identifier = tempNotification.userInfo!["UUID"] as? String {
+                    if identifier == self.uuid {
                         UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
                         print(tempArray)
                     }
@@ -149,43 +154,50 @@ extension Habit {
         
         //creating the notification
         let notification = UILocalNotification()
+        let uuid1 = HabitIdentifier()
+        print(uuid1)
         notification.alertBody = name
         notification.alertAction = "open"
         notification.fireDate = date
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.timeZone = NSTimeZone.defaultTimeZone()
-        notification.userInfo = ["name": name, "UUID": uuid]
+        notification.userInfo = ["name": name, "uuid": uuid1.uuid]
         notification.repeatInterval = .Day
-        
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        try! Realm().write {
+        notificationArray.insert(uuid1, atIndex: 0)
+
+        }
         print(notification.userInfo)
+        print(notificationArray)
     }
     
     func deleteNotificationsforHabit(){
+//        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
+//            for tempNotification in tempArray {
+//                if let identifier = tempNotification.userInfo!["UUID"] as? String {
+//                    if identifier == self.uuid {
+//                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
+//                        print(tempArray)
+//                    }
+//                }
+//            }
+//        }
+        
         if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
             for tempNotification in tempArray {
-                if let identifier = tempNotification.userInfo!["UUID"] as? String {
-                    if identifier == self.uuid {
+                if let identifier = tempNotification.userInfo!["uuid"] as? String {
+                    if identifier == self.notificationArray[0].uuid {
                         UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
                         print(tempArray)
                     }
                 }
+                
             }
         }
+        
+//        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
-    
-//    func checkStreak(viewController: UIViewController){
-//        if currentStreak == 1 {
-//        let streakAlert = JSSAlertView().show(
-//            viewController,
-//            title: "Congrats",
-//            text: "Wow! You have reached a \(habit?.currentStreak) day streak",
-//            buttonText: "OK",
-//            color: UIColorFromHex(0x14CDB6, alpha: 1)
-//        )
-//        streakAlert.setTextTheme(.Light)
-//        }
-//    }
 }
 
 

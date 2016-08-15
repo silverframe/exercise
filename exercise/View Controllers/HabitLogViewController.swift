@@ -84,7 +84,8 @@ class HabitLogViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            habits[indexPath.row].deleteNotificationsforHabit()
+            if habits[indexPath.row].notificationArray.count != 0 {
+                habits[indexPath.row].deleteNotificationsforHabit() } 
             RealmHelper.deleteHabit(habits[indexPath.row])
             habits = RealmHelper.retrieveHabits()
             

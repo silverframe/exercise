@@ -12,6 +12,7 @@
 		CB1584EC1D41EB7200D6D6BB /* HabitLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */; };
 		CB1584EF1D41EF4600D6D6BB /* ListHabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1584EE1D41EF4600D6D6BB /* ListHabitTableViewCell.swift */; };
 		CB179E1B1D5DB276007DC616 /* PageContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB179E1A1D5DB276007DC616 /* PageContentViewController.swift */; };
+		CB179E1D1D61B048007DC616 /* HabitIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB179E1C1D61B048007DC616 /* HabitIdentifier.swift */; };
 		CB3534E01D3F719E005FD442 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3534DF1D3F719E005FD442 /* AppDelegate.swift */; };
 		CB3534E51D3F719E005FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB3534E31D3F719E005FD442 /* Main.storyboard */; };
 		CB3534E71D3F719E005FD442 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB3534E61D3F719E005FD442 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 		CB1584EB1D41EB7200D6D6BB /* HabitLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitLogViewController.swift; sourceTree = "<group>"; };
 		CB1584EE1D41EF4600D6D6BB /* ListHabitTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListHabitTableViewCell.swift; sourceTree = "<group>"; };
 		CB179E1A1D5DB276007DC616 /* PageContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentViewController.swift; sourceTree = "<group>"; };
+		CB179E1C1D61B048007DC616 /* HabitIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HabitIdentifier.swift; sourceTree = "<group>"; };
 		CB3534DC1D3F719E005FD442 /* exercise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = exercise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3534DF1D3F719E005FD442 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CB3534E41D3F719E005FD442 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				CB3534F91D40AA3D005FD442 /* Habit.swift */,
 				CB3534FB1D40AEA1005FD442 /* Date.swift */,
 				CB73CBBE1D4AF55400AA1076 /* Reminder.swift */,
+				CB179E1C1D61B048007DC616 /* HabitIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				CB73CBBF1D4AF55400AA1076 /* Reminder.swift in Sources */,
 				CB179E1B1D5DB276007DC616 /* PageContentViewController.swift in Sources */,
 				CB73CBBD1D4AF07200AA1076 /* ButtonRefresh.swift in Sources */,
+				CB179E1D1D61B048007DC616 /* HabitIdentifier.swift in Sources */,
 				CB5134301D51F7760010779B /* WelcomeAlerts.swift in Sources */,
 				CB73CBC31D4AFA1200AA1076 /* EditReminderViewController.swift in Sources */,
 				CB73CBB41D4454D000AA1076 /* WeeklyTargetViewController.swift in Sources */,
