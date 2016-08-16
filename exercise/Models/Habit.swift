@@ -118,12 +118,11 @@ class Habit: Object {
 
 extension Habit {
     func addReminder(date: NSDate){
-//        let calendar = NSCalendar.currentCalendar()
-//        let type: NSCalendarUnit = [NSCalendarUnit.Year , NSCalendarUnit.Month , NSCalendarUnit.Day , NSCalendarUnit.Hour , NSCalendarUnit.Minute , NSCalendarUnit.Second , NSCalendarUnit.Weekday]
-//        let dateComponent = calendar.components(type, fromDate: date)
-//        dateComponent.second = 0
-//        let newDate = calendar.dateFromComponents(dateComponent)
-//        let firedate = calendar.dateFromComponents(dateComponent)
+        let calendar = NSCalendar.currentCalendar()
+        let type: NSCalendarUnit = [NSCalendarUnit.Year , NSCalendarUnit.Month , NSCalendarUnit.Day , NSCalendarUnit.Hour , NSCalendarUnit.Minute , NSCalendarUnit.Second]
+        let dateComponent = calendar.components(type, fromDate: date)
+        dateComponent.second = 0
+        let newDate = calendar.dateFromComponents(dateComponent)
         
         
 //        to clear all other notifications with the UUID
@@ -133,7 +132,7 @@ extension Habit {
         let notification = UILocalNotification()
         notification.alertBody = name
         notification.alertAction = "open"
-        notification.fireDate = date
+        notification.fireDate = newDate
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.timeZone = NSTimeZone.defaultTimeZone()
         notification.userInfo = ["name": name, "uuid": uuid]
