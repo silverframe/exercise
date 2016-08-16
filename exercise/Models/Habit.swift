@@ -42,9 +42,9 @@ class Habit: Object {
     
     dynamic var addToStreak = true
     
-    dynamic var uuid = NSUUID().UUIDString
+    dynamic var uuid: String = NSUUID().UUIDString
     
-    let notificationArray = List<HabitIdentifier>()
+//    let notificationArray = List<HabitIdentifier>()
     
     let dateCompleted = List<Date>()
     
@@ -55,10 +55,6 @@ class Habit: Object {
         name = habitName
         weeklyTarget = goalFrequency
         creationDate = date
-    }
-    
-    override static func primaryKey() -> String? {
-        return "uuid"
     }
     
     func frequencyChange(){
@@ -74,7 +70,7 @@ class Habit: Object {
                 addToStreak = false
                 
                 for notification: UILocalNotification in UIApplication.sharedApplication().scheduledLocalNotifications! {
-                    if (notification.userInfo!["UUID"] as! String == uuid) {
+                    if (notification.userInfo!["uuid"] as! String == uuid) {
                         UIApplication.sharedApplication().cancelLocalNotification(notification)
                     }
                 }
@@ -113,20 +109,10 @@ class Habit: Object {
                 addReminder(time)
             }
         }
-//        print(UIApplication.sharedApplication().scheduledLocalNotifications)
     }
     
     func turnReminderOff(){
-        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
-            for tempNotification in tempArray {
-                if let identifier = tempNotification.userInfo!["name"] as? String {
-                    if identifier == self.name! {
-                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
-                        print(tempArray)
-                    }
-                }
-            }
-        }
+        deleteNotificationsforHabit()
     }
 }
 
@@ -140,54 +126,27 @@ extension Habit {
 //        let firedate = calendar.dateFromComponents(dateComponent)
         
         
-        //to clear all other notifications of the same name
-        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
-            for tempNotification in tempArray {
-                if let identifier = tempNotification.userInfo!["UUID"] as? String {
-                    if identifier == self.uuid {
-                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
-                        print(tempArray)
-                    }
-                }
-            }
-        }
+//        to clear all other notifications with the UUID
+        deleteNotificationsforHabit()
         
         //creating the notification
         let notification = UILocalNotification()
-        let uuid1 = HabitIdentifier()
-        print(uuid1)
         notification.alertBody = name
         notification.alertAction = "open"
         notification.fireDate = date
         notification.soundName = UILocalNotificationDefaultSoundName
         notification.timeZone = NSTimeZone.defaultTimeZone()
-        notification.userInfo = ["name": name, "uuid": uuid1.uuid]
+        notification.userInfo = ["name": name, "uuid": uuid]
         notification.repeatInterval = .Day
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
-        try! Realm().write {
-        notificationArray.insert(uuid1, atIndex: 0)
-
-        }
-        print(notification.userInfo)
-        print(notificationArray)
+        print(notification)
     }
     
     func deleteNotificationsforHabit(){
-//        if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
-//            for tempNotification in tempArray {
-//                if let identifier = tempNotification.userInfo!["UUID"] as? String {
-//                    if identifier == self.uuid {
-//                        UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
-//                        print(tempArray)
-//                    }
-//                }
-//            }
-//        }
-        
         if let tempArray = UIApplication.sharedApplication().scheduledLocalNotifications {
             for tempNotification in tempArray {
                 if let identifier = tempNotification.userInfo!["uuid"] as? String {
-                    if identifier == self.notificationArray[0].uuid {
+                    if identifier == uuid {
                         UIApplication.sharedApplication().cancelLocalNotification(tempNotification)
                         print(tempArray)
                     }
@@ -195,8 +154,6 @@ extension Habit {
                 
             }
         }
-        
-//        UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
 }
 
