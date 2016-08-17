@@ -34,7 +34,8 @@ struct Reset {
                 let calendar = NSCalendar.currentCalendar()
                 calendar.timeZone = NSTimeZone.defaultTimeZone()
                 let dateInYesterday = calendar.isDateInYesterday(date)
-                if dateInYesterday != true {
+                let dateInToday = calendar.isDateInToday(date)
+                if dateInYesterday && dateInToday != true {
                     try! Realm().write {
                         habit.currentStreak = 0 
                     }
