@@ -648,7 +648,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YJS-9C-ayw">
-                                        <rect key="frame" x="43" y="13" width="139" height="170"/>
+                                        <rect key="frame" x="42" y="13" width="139" height="170"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Streak" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6i-kp-9d3">
                                                 <rect key="frame" x="0.0" y="0.0" width="139" height="35"/>
@@ -703,35 +703,35 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-w1-xFQ">
-                                        <rect key="frame" x="15" y="13" width="30" height="170"/>
+                                        <rect key="frame" x="8" y="13" width="30" height="170"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdU-is-uOc">
                                                 <rect key="frame" x="0.0" y="0.0" width="30" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="sfn-UU-MkV"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Check"/>
+                                                <state key="normal" image="Check"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAN-EI-JB0">
                                                 <rect key="frame" x="0.0" y="45" width="30" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="0Yd-HB-Gnv"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Check"/>
+                                                <state key="normal" image="Check"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="skZ-2J-ifX">
                                                 <rect key="frame" x="0.0" y="90" width="30" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="I08-MB-6CG"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Check"/>
+                                                <state key="normal" image="Check"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8h-YL-SYp">
                                                 <rect key="frame" x="0.0" y="135" width="30" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="tvP-NU-yZz"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="Check"/>
+                                                <state key="normal" image="Check"/>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -750,8 +750,8 @@
                                 <constraints>
                                     <constraint firstItem="pWd-qV-WLS" firstAttribute="top" secondItem="VYC-jh-S0z" secondAttribute="top" constant="11" id="B7Y-3L-JcZ"/>
                                     <constraint firstItem="YJS-9C-ayw" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" constant="2" id="CdH-kU-Je5"/>
-                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="8EL-w1-xFQ" secondAttribute="trailing" constant="-2" id="DGv-B0-DiG"/>
-                                    <constraint firstItem="8EL-w1-xFQ" firstAttribute="leading" secondItem="VYC-jh-S0z" secondAttribute="leading" constant="15" id="JLv-va-Kup"/>
+                                    <constraint firstItem="YJS-9C-ayw" firstAttribute="leading" secondItem="8EL-w1-xFQ" secondAttribute="trailing" constant="4" id="DGv-B0-DiG"/>
+                                    <constraint firstItem="8EL-w1-xFQ" firstAttribute="leading" secondItem="VYC-jh-S0z" secondAttribute="leading" constant="8" id="JLv-va-Kup"/>
                                     <constraint firstItem="pWd-qV-WLS" firstAttribute="centerY" secondItem="VYC-jh-S0z" secondAttribute="centerY" id="p7F-jF-50W"/>
                                     <constraint firstAttribute="trailing" secondItem="pWd-qV-WLS" secondAttribute="trailing" constant="10" id="tQ6-xU-cCm"/>
                                     <constraint firstItem="YJS-9C-ayw" firstAttribute="top" secondItem="8EL-w1-xFQ" secondAttribute="top" id="v8K-fy-MZ3"/>
@@ -831,10 +831,10 @@
     <resources>
         <image name="Button" width="34" height="34"/>
         <image name="Button Selected" width="34" height="34"/>
-        <image name="Check" width="24" height="24"/>
+        <image name="Check" width="17" height="18"/>
         <image name="Checkbox" width="25" height="25"/>
         <image name="Filled Checkbox" width="25" height="25"/>
-        <image name="Green Arrow1" width="13" height="18"/>
+        <image name="Green Arrow1" width="11" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4dB-tL-sVl"/>

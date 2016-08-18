@@ -42,8 +42,8 @@ class CalendarProgressViewController: UIViewController, FSCalendarDataSource, FS
         calendarView.appearance.cellShape = .Rectangle
         calendarView.clipsToBounds = true
         calendarView.appearance.headerMinimumDissolvedAlpha = 0.0;
-        calendarView.appearance.headerTitleColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
-        calendarView.appearance.weekdayTextColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
+        calendarView.appearance.headerTitleColor = UIColor(red: 18/235, green: 188/235, blue: 167/235, alpha: 1.0)
+        calendarView.appearance.weekdayTextColor = UIColor(red: 18/235, green: 188/235, blue: 167/235, alpha: 1.0)
         calendarView.appearance.selectionColor = UIColor(red: 20/235, green: 205/235, blue: 182/235, alpha: 1.0)
         calendarView.appearance.adjustsFontSizeToFitContentSize = true
         calendarView.appearance.weekdayTextSize = 30.0
