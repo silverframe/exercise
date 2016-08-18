@@ -35,14 +35,15 @@ struct Reset {
                 calendar.timeZone = NSTimeZone.defaultTimeZone()
                 let dateInYesterday = calendar.isDateInYesterday(date)
                 let dateInToday = calendar.isDateInToday(date)
-                if dateInYesterday && dateInToday != true {
+                guard (dateInYesterday && dateInToday) || dateInYesterday else {
                     try! Realm().write {
-                        habit.currentStreak = 0 
+                        habit.currentStreak = 0
                     }
+                    return
                 }
-            } 
             }
         }
+    }
     
     func currentWeekValue() -> Int {
         let todayDate = NSDate()
