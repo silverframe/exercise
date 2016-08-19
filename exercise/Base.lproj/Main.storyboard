@@ -6,14 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Page View Controller-->
-        <scene sceneID="GGd-bb-WPe">
-            <objects>
-                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="ugu-11-Gqy" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OWd-Eo-fEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-596" y="-364"/>
-        </scene>
         <!--Page Content View Controller-->
         <scene sceneID="ipY-Oa-8xs">
             <objects>
@@ -45,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4yb-zB-2ad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="84" y="-364"/>
+            <point key="canvasLocation" x="96" y="-1076"/>
         </scene>
         <!--Habits-->
         <scene sceneID="yJs-YD-7SM">
@@ -64,11 +56,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gac-l8-oWu">
-                                            <rect key="frame" x="10" y="12" width="25" height="25"/>
+                                            <rect key="frame" x="0.0" y="-0.5" width="50" height="50"/>
                                             <accessibility key="accessibilityConfiguration" identifier="habitFrequencyButton" label="done"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="31" id="8RD-wD-qTm"/>
                                                 <constraint firstAttribute="width" constant="31" id="Bve-um-I1b"/>
+                                                <constraint firstAttribute="width" constant="50" id="OSp-sR-ISF"/>
+                                                <constraint firstAttribute="height" constant="50" id="QP0-uC-Eny"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="VO6-2j-hHB"/>
                                                 <constraint firstAttribute="height" constant="31" id="lu7-nt-TTp"/>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="mol-r0-APJ"/>
@@ -76,8 +70,9 @@
                                             </constraints>
                                             <state key="normal" image="Checkbox"/>
                                             <state key="disabled" image="Filled Checkbox"/>
-                                            <state key="selected" image="Button Selected"/>
-                                            <state key="highlighted" image="Button"/>
+                                            <state key="selected" image="Check"/>
+                                            <state key="highlighted" image="Checkbox"/>
+                                            <state key="focused" image="Checkbox"/>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="8RD-wD-qTm"/>
@@ -92,7 +87,7 @@
                                                 <action selector="habitFrequencyButtonClicked:" destination="qY6-wC-fsk" eventType="touchUpInside" id="Nxy-Dc-tJQ"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="HabitNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEt-Id-eTH">
                                             <rect key="frame" x="45" y="15" width="200" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="200" id="lfG-pz-jup"/>
@@ -125,7 +120,7 @@
                                     <constraints>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" id="2Rp-Rh-tar"/>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" id="4cF-X1-uil"/>
-                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="10" id="5n0-DU-6bE"/>
+                                        <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="Gac-l8-oWu" secondAttribute="trailing" id="5n0-DU-6bE"/>
                                         <constraint firstItem="5KZ-b1-899" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="top" id="6TP-mc-Uhy"/>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" constant="-1.75" id="9Sn-lV-WrP"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="leading" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="10" id="A2c-hk-9o3"/>
@@ -138,7 +133,7 @@
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leading" constant="10" id="T7p-S5-dYW"/>
                                         <constraint firstItem="Gac-l8-oWu" firstAttribute="top" secondItem="TbP-1k-XBL" secondAttribute="topMargin" constant="1" id="UwR-KG-eFt"/>
                                         <constraint firstItem="5KZ-b1-899" firstAttribute="centerY" secondItem="TbP-1k-XBL" secondAttribute="centerY" constant="-1.25" id="X13-pa-zUN"/>
-                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leading" constant="10" id="a8j-io-5NK"/>
+                                        <constraint firstItem="Gac-l8-oWu" firstAttribute="leading" secondItem="TbP-1k-XBL" secondAttribute="leading" id="a8j-io-5NK"/>
                                         <constraint firstAttribute="trailing" secondItem="5KZ-b1-899" secondAttribute="trailing" constant="20" id="bfU-X1-n5M"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="Gac-l8-oWu" secondAttribute="trailing" constant="20" id="d95-N2-EKd"/>
                                         <constraint firstItem="qEt-Id-eTH" firstAttribute="baseline" secondItem="Gac-l8-oWu" secondAttribute="baseline" id="e8T-4f-Osq"/>
@@ -163,6 +158,7 @@
                                             <exclude reference="BIg-rR-vFE"/>
                                             <exclude reference="HWX-ZV-Qdl"/>
                                             <exclude reference="Mdh-4c-dR7"/>
+                                            <exclude reference="NjU-93-gAh"/>
                                             <exclude reference="QDm-mg-Ior"/>
                                             <exclude reference="e8T-4f-Osq"/>
                                             <exclude reference="hOn-Cg-ZzA"/>
@@ -803,6 +799,24 @@
             </objects>
             <point key="canvasLocation" x="1029.5" y="-358.5"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Yt2-RV-IvJ">
+            <objects>
+                <viewController id="YuK-ok-y9G" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="pJC-ns-jtg"/>
+                        <viewControllerLayoutGuide type="bottom" id="qYY-IT-9yd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BuA-st-2xt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12R-dD-1On" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642" y="-1076"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="oww-mb-BmO">
             <objects>
@@ -829,11 +843,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button" width="34" height="34"/>
-        <image name="Button Selected" width="34" height="34"/>
         <image name="Check" width="17" height="18"/>
-        <image name="Checkbox" width="25" height="25"/>
-        <image name="Filled Checkbox" width="25" height="25"/>
+        <image name="Checkbox" width="50" height="50"/>
+        <image name="Filled Checkbox" width="50" height="50"/>
         <image name="Green Arrow1" width="11" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>

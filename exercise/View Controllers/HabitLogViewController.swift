@@ -58,6 +58,11 @@ class HabitLogViewController: UITableViewController {
         cell.habitNameLabel.text = habit.name
         
         cell.delegate = self
+        
+        if (habit.name == "TestHabit3") {
+            
+            print("check this one")
+        }
     
         // Function to differentiate between a newly created habit(during the same session) and an existing one
         if habit.dateCompleted.count != 0 {
@@ -75,6 +80,8 @@ class HabitLogViewController: UITableViewController {
             }
         } else {
             cell.habitFrequencyButton.enabled = true
+            cell.backgroundColor = UIColor.whiteColor()
+            cell.habitNameLabel.alpha = 1.0
         }
 
         cell.habit = habit
